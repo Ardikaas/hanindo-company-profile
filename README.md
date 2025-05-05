@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Company Profile Website – PT. Hanindo Bakti Sejahtera
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the official company profile website project for **PT. Hanindo Bakti Sejahtera**, a professional company specializing in construction services, equipment procurement, and industrial support—especially in the mining and manufacturing sectors.
 
-## Available Scripts
+Built using **React.js**, this website delivers a modern, responsive, and informative platform to showcase the company's services, expertise, and contact information.
 
-In the project directory, you can run:
+## 🏢 About PT. Hanindo Bakti Sejahtera
 
-### `npm start`
+**PT. Hanindo Bakti Sejahtera** focuses on:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Building construction and facility maintenance
+- Industrial processing and technical support
+- Procurement of goods and services
+- Support for mining and heavy industries
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Our engineering division has specialized skills in **plastic engineering**, offering custom fabrication and installation of liners for hoppers, chutes, dump trucks, silos, bins, and jetty fender pads for various industrial applications.
 
-### `npm test`
+## 🚀 Key Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- ✅ Professionally designed landing page
+- ✅ Company introduction and background
+- ✅ Services and industry expertise overview
+- ✅ Project gallery and documentation
+- ✅ Contact section with inquiry form
+- ✅ Fully responsive across all devices
 
-### `npm run build`
+## 🛠️ Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- [React.js](https://reactjs.org/)
+- HTML5 & CSS3 (Tailwind or Bootstrap, optional)
+- JavaScript (ES6+)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 📦 Getting Started
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Make sure you have **Node.js** and **npm** installed on your local environment.
 
-### `npm run eject`
+```bash
+# Clone this repository
+git clone https://github.com/your-username/hanindo-company-profile.git
+cd hanindo-company-profile
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Install dependencies
+npm install
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Start development server
+npm run dev
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Then open your browser and navigate to `http://localhost:5173/` (or the port shown in your terminal).
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🤝 Contributions
 
-## Learn More
+This is a proprietary project and **not open for public contributions** at this time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you are a client or collaborator of PT. Hanindo Bakti Sejahtera and wish to contribute or request a change, please contact the development team directly.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 📄 License
 
-### Code Splitting
+This project is **not open source**.
+All rights are reserved by:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+© 2025 PT. Hanindo Bakti Sejahtera. All rights reserved.
 
-### Analyzing the Bundle Size
+This website and its source code are the exclusive property of PT. Hanindo Bakti Sejahtera.
+Any unauthorized use, duplication, modification, or distribution without written permission is strictly prohibited.
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for visiting our repository.
+For business inquiries, please visit our website or contact our team directly.

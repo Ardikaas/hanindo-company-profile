@@ -1,0 +1,5 @@
+Copyright © 2025 PT. Hanindo Bakti Sejahtera. All rights reserved.
+
+This software and its associated files are the exclusive property of PT. Hanindo Bakti Sejahtera. 
+Unauthorized copying, distribution, modification, or use of this code or its content, 
+in whole or in part, without express written permission from the owner is strictly prohibited.
