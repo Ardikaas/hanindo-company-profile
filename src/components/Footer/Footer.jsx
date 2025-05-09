@@ -19,12 +19,12 @@ const Footer = () => {
       </div>
       <div className="footer-center">
         <h4>
-          PT. Anugerah Teknik Asia adalah perusahaan swasta Indonesia yang
-          berpengalaman di bidang Engineering, konstruksi, mekanik, elektrik di
-          lingkungan minyak, gas dan petrokimia. Berlokasi dekat kawasan
-          Industri Karawang dengan didukung oleh tenaga ahli yang berpengalaman
-          dibidangnya juga peralatan dan teknologi yang berstandar
-          internasional.
+          PT. Hanindo Bakti Sejahtera adalah perusahaan yang bergerak di bidang
+          konstruksi, perawatan gedung, pengolahan industri, dan pengadaan
+          barang. Spesialisasi kami adalah plastik engineering, termasuk
+          fabrikasi dan pemasangan liner untuk Hopper, Chutu, Dump Truck, dan
+          Silo. Kami berkomitmen menjadi penyedia jasa terpercaya untuk
+          mendukung kemajuan ekonomi daerah dan nasional.
         </h4>
         <div className="footer-center-center">
           <div className="footer-cc-li">

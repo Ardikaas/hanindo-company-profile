@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
-  padding: 20px 90px;
+  padding: 15px 90px;
   position: fixed;
   height: 65px;
   top: 0;
@@ -15,7 +15,7 @@
 }
 
 .header-container > a > img{
-  width: 150px;
+  width: 130px;
   height: auto;
 }
 
@@ -27,10 +27,10 @@
 
 .header-link > a{
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
+  font-weight: 700;
   text-decoration: none;
   color: #3c3c3b;
-  font-size: 1rem;
+  font-size: 0.9rem;
   transition: ease-in 0.3s;
 }
 
@@ -45,7 +45,6 @@
   align-items: center;
   background-color: #ffffff;
   position: fixed;
-  height: 65px;
   top: 0;
   right: 0;
   left: 0;
@@ -76,7 +75,7 @@
 
 .header-link-small{
   position: absolute;
-  margin: 75px;
+  margin-top: 65px;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease-in-out;

@@ -1,0 +1,78 @@
+.contact-container{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 90px;
+  margin-top: 85px;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.contact-form-left{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+
+.contact-form-left >input{
+  padding: 10px 10px;
+  border: 1px solid #3c3c3b;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.contact-form > textarea{
+  padding: 10px 10px;
+  border: 1px solid #3c3c3b;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  width: 600px
+}
+
+.contact-form-left > button{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  padding: 10px 25px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  background-color: #2550A4;
+  border: 1px solid #2550A4;
+  transition: 0.3s ease-in-out;
+}
+
+.contact-form-left > button:hover{
+  background-color: #3c3c3b;
+  border: 1px solid #3c3c3b;
+}
+
+.address{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.address-text > h3{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #3c3c3b;
+  font-size: 1.5rem;
+}
+
+.address-text > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 1rem;
+}
+
+.address > a >img{
+  width: 600px;
+  height: auto;
+}

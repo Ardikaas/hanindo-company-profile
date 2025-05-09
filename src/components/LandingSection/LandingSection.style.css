@@ -1,8 +1,7 @@
 .landing-container {
-  margin-top: 65px;
+  margin-top:95px;
   display: flex;
   flex-direction: column;
-  gap: 60px;
 }
 
 .landing-overview-section {
@@ -15,7 +14,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 50px 50px;
+  padding: 80px 50px;
 }
 
 .landing-overview-section-text > h1 {
@@ -51,7 +50,7 @@
   font-size: 1.1rem;
   background-color: #2550A4;
   border: 1px solid #2550A4;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in;
   text-decoration: none;
   width: fit-content
 }
@@ -65,108 +64,312 @@
 
 .landing-overview-section > img{
   width: 100%;
-  max-width: 800px;
+  max-width: 665px;
   width: auto;
 }
 
-.landing-experience-section {
+.landing-service-section{
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 25px 90px;
+  padding: 50px 90px;
+  background-color: #F4F4F3;
 }
 
-.landing-experience-section > h4 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
-  color: #3c3c3b;
-  font-size: 2rem;
-  border-bottom: #2550A4 4px solid;
-}
-
-.experience-row{
-  margin-top: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.experience-column{
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.experience-card{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  align-items: center;
-}
-
-.experience-card > img{
-  width: 30px;
-  height: 30px;
-  padding: 15px;
-  border-radius: 5px;
-  background-color: #2550A4;
-  transition: ease-in-out 0.3s;
-}
-.experience-card > img:hover{
-  background-color: #3c3c3b;
-}
-
-.experience-card > h4{
+.landing-service-section > h4{
   font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
   color: #3c3c3b;
-  font-size: 1rem;
+  font-size: 2.5rem;
+}
+
+.landing-service-section > h6{
+  margin-top: 10px;
+  margin-bottom: 50px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  width: 550px;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+}
+
+.landing-service-section-card{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.landing-service-section-card-item{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #DFE0DF;
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  transition: ease-in 0.3s;
+}
+
+.landing-service-section-card-item > img{
+  width: 25px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 13px;  
+}
+
+.landing-service-section-card-item > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 1.5rem;
+}
+
+.landing-service-section-card-item > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+  height: 85px;
+}
+
+.landing-service-section-card-item > a{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #2550A4;
+}
+
+.landing-service-section-card-item:hover{
+  background-color: #3c3c3b;
+}
+
+.landing-service-section-card-item:hover > h4{
+  color: #ffffff;
+}
+
+.landing-service-section-card-item:hover > h6{
+  color: #ffffff;
+}
+
+.landing-service-section-card-item:hover > a{
+  color: #D3A24A;
+}
+
+.landing-about-section{
+  display: flex;
+  flex-direction: column;
+  padding: 50px 90px;
+}
+
+.landing-about-section-top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.landing-about-section-top-text > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 2.5rem;
+}
+
+.landing-about-section-top-text > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  margin-top: 10px;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+  width: 565px;
+}
+
+.landing-about-section-top > a{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  background-color: #2550A4;
+  transition: 0.3s ease-in;
+  text-decoration: none;
+}
+
+.landing-about-section-top > a:hover{
+  background-color: #3c3c3b;
+}
+
+.landing-about-section-bottom{
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+
+.landing-about-section-bottom > img{
+  width: 100%;
+  max-width: 450px;
+}
+
+.landing-about-section-bottom-text{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.landing-about-section-bottom-vision{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #F4F4F3;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #dfe0df;
+}
+
+.landing-about-section-bottom-vision > h1{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 2rem;
+}
+
+.landing-about-section-bottom-vision > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+}
+
+.landing-about-section-bottom-vision > h6 > a{
+  color: #3c3c3b;
+  text-decoration: none;
+  padding-left: 5px;
+  font-weight: 600;
+}
+
+.landing-about-section-bottom-text > a{
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #dfe0df;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 .landing-certificate-section{
   display: flex;
   flex-direction: column;
-  align-items: left;
-  gap: 20px;
-  padding: 25px 90px;
+  padding: 50px 90px;
 }
 
-.landing-certificate-section > h4{
+.landing-certificate-section-top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+.landing-certificate-section-text > h1{
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
+  font-weight: 600;
   color: #3c3c3b;
-  font-size: 2rem;
-  border-bottom: #2550A4 4px solid;
+  font-size: 2.5rem;
+}
+
+.landing-certificate-section-text > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+  width: 550px;
+  margin-top: 10px;
+}
+
+.landing-certificate-section-button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.landing-certificate-section-button > button{
+  padding: 10px 10px;
+  background-color: #2550A4;
+  border: none;
+  transition: 0.3s ease-in-out;
+}
+
+.landing-certificate-section-button > img{
+  width: 25px;
+  height: 25px;
+}
+
+.landing-certificate-section-button > button:hover{
+  background-color: #3c3c3b;
 }
 
 .certificate-card-carousel {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  overflow: hidden;
+  width: 100%;
+}
+
+.certificate-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: max-content;
+}
+
+.certificate-img-wrapper {
+  flex: 0 0 calc(100% / 3); /* 3 per view */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5px;
+  box-sizing: border-box;
 }
 
 .certificate-img{
   width: 100%;
-  max-width: 350px;
+  max-width: 400px;
   height: auto;
   border: 1px solid #3c3c3b;
+  object-fit: contain;
 }
 
 .landing-client-section{
   display: flex;
   flex-direction: column;
-  align-items: left;
-  gap: 20px;
-  padding: 25px 90px;
+  align-items: center;
+  padding: 50px 0px;
+  background-color: #F4F4F3;
 }
 
-.landing-client-section > h4{
+.landing-client-section > h1{
   font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
+  font-weight: 600;
   color: #3c3c3b;
-  font-size: 2rem;
-  border-bottom: #2550A4 4px solid;
+  font-size: 2.5rem;
+}
+
+.landing-client-section > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+  width: 600px;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
 .client-card-carousel {
@@ -175,6 +378,23 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
+}
+
+.client-marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.client-track {
+  display: flex;
+  width: max-content;
+  animation: scroll-left 60s linear infinite;
+}
+
+.client-item {
+  flex: 0 0 auto;
+  padding-right: 40px;
 }
 
 .client-img-wrapper {
@@ -188,7 +408,15 @@
   width: 100%;
   max-width: 150px;
   height: auto;
-  border: 1px solid #3c3c3b;
   border-radius: 10px;
   object-fit: contain;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

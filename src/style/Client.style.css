@@ -1,0 +1,7 @@
+.clients-container{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding: 50px 90px;
+  margin-top: 85px;
+}
