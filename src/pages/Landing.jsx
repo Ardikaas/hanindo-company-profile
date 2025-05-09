@@ -1,8 +1,12 @@
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+
 const Landing = () => {
   return (
     <div>
-      <h1>Landing Page</h1>
-      <p>Welcome to the landing page!</p>
+      <Header />
+      <div className="landing"></div>
+      <Footer />
     </div>
   );
 };

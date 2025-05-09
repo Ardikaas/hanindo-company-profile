@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
+html, body{
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   background-color: #ffffff;
@@ -26,4 +30,10 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #555555;
+}
+
+.landing{
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
 }

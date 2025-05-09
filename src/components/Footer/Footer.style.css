@@ -1,0 +1,208 @@
+.footer-container {
+  background-color: #3c3c3b;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 25px 90px;
+}
+
+.footer-top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 80px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #606768;
+}
+
+.footer-top-item{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer-top-item > img{
+  width: 20px;
+  height: auto;
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.footer-top-item > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.footer-center{
+  padding: 50px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  border-bottom: 1px solid #606768;
+}
+
+.footer-center > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  width: 400px;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+}
+
+.footer-center-center{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+}
+
+.footer-cc-li{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-cc-li > a{
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
+.footer-cc-li > a > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: #ffffff;
+  transition: ease-in 0.3s;
+}
+
+.footer-cc-li > a > h4:hover{
+  color: #2550A4;
+}
+
+.footer-center-right{
+  display: flex;
+  flex-direction: column;
+  padding-left: 110px;
+}
+
+.footer-center-right > h3{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.footer-center-right > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  width: 350px;
+  color: #ffffff;
+  font-size: 0.95rem;
+  line-height: 1.3rem;
+}
+
+.footer-center-right > a{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  text-decoration: none;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.footer-center-right > a > img{
+  width: 20px;
+}
+
+.footer-center-right > a > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.footer-bottom> h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #606768;
+  font-size: 0.9rem;
+  padding-top: 25px;
+}
+
+@media (max-width: 960px) {
+  .footer-container {
+    padding: 20px 40px;
+  }
+
+  .footer-top-item > img{
+    width: 20px;
+    height: auto;
+    padding: 8px;
+  }
+
+  .footer-top-item > h4{
+    font-size: 0.8rem;
+  }
+
+  .footer-center{
+    padding: 25px 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-center > h4{
+    font-size: 0.8rem;
+    width: auto;
+  }
+
+  .footer-center-center{
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+  }
+
+  .footer-center-right{
+    padding-left: 0px;
+  }
+
+  .footer-cc-li > a > h4{
+    font-size: 0.8rem;
+  }
+
+  .footer-center-right > h3{
+    font-size: 0.8rem;
+  }
+
+  .footer-center-right > h4{
+    font-size: 0.8rem;
+  }
+  
+  .footer-center-right > a > h4{
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom > h4{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px){
+  .footer-top{
+    flex-direction: column;
+    align-items: normal;
+    gap: 20px;
+    padding-bottom: 25px;
+  }
+
+  .footer-bottom> h4{
+    font-size: 0.6rem;
+  }
+}
