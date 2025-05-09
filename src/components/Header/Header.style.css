@@ -1,10 +1,17 @@
 .header-container {
+  position: absolute;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   background-color: #ffffff;
   padding: 20px 90px;
+  position: fixed;
+  height: 65px;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .header-container > a > img{
@@ -38,6 +45,7 @@
   align-items: center;
   background-color: #ffffff;
   position: fixed;
+  height: 65px;
   top: 0;
   right: 0;
   left: 0;
@@ -67,7 +75,6 @@
 }
 
 .header-link-small{
-
   position: absolute;
   margin: 75px;
   overflow: hidden;

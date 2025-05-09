@@ -1,0 +1,194 @@
+.landing-container {
+  margin-top: 65px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.landing-overview-section {
+  display: flex;
+  flex-direction: row;
+  background-color: #3c3c3b;
+}
+
+.landing-overview-section-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px 50px;
+}
+
+.landing-overview-section-text > h1 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  font-size: 2.5rem;
+}
+
+.landing-overview-section-text-bridge > h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.landing-overview-section-text-bridge{
+  display: flex;
+  flex-direction: column;
+  align-items: normal;
+  gap: 20px;
+}
+
+.landing-overview-section-text-bridge > a {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  margin-top: 20px;
+  padding: 10px 25px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  background-color: #2550A4;
+  border: 1px solid #2550A4;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  width: fit-content
+}
+
+.landing-overview-section-text-bridge > a:hover {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  color: #3c3c3b;
+  cursor: pointer;
+}
+
+.landing-overview-section > img{
+  width: 100%;
+  max-width: 800px;
+  width: auto;
+}
+
+.landing-experience-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 25px 90px;
+}
+
+.landing-experience-section > h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #3c3c3b;
+  font-size: 2rem;
+  border-bottom: #2550A4 4px solid;
+}
+
+.experience-row{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.experience-column{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.experience-card{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.experience-card > img{
+  width: 30px;
+  height: 30px;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: #2550A4;
+  transition: ease-in-out 0.3s;
+}
+.experience-card > img:hover{
+  background-color: #3c3c3b;
+}
+
+.experience-card > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 1rem;
+}
+
+.landing-certificate-section{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 20px;
+  padding: 25px 90px;
+}
+
+.landing-certificate-section > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #3c3c3b;
+  font-size: 2rem;
+  border-bottom: #2550A4 4px solid;
+}
+
+.certificate-card-carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-img{
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border: 1px solid #3c3c3b;
+}
+
+.landing-client-section{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 20px;
+  padding: 25px 90px;
+}
+
+.landing-client-section > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #3c3c3b;
+  font-size: 2rem;
+  border-bottom: #2550A4 4px solid;
+}
+
+.client-card-carousel {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.client-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  border: 1px solid #3c3c3b;
+  border-radius: 10px;
+  object-fit: contain;
+}

@@ -56,7 +56,7 @@ const Footer = () => {
           </h4>
           <h4>Phone: 082118401473</h4>
           <a
-            href="https://drive.google.com/file/d/1dZ4JfvI_g7ftJxWIo-UHnDl5wezWVLK3/view"
+            href="https://drive.google.com/file/d/1KzIEwMleM5g78aAjTiUFauCUvGXUAh1n/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >

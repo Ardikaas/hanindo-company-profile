@@ -3,11 +3,9 @@ import menu from "../../assets/menu-icon.png";
 import close from "../../assets/x-icon.png";
 import "./Header.style.css";
 import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const isSmall = useMediaQuery({ maxWidth: 767 });
 
   const handleClick = () => {
     setIsOpen(!isOpen);
