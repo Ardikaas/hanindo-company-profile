@@ -3,6 +3,7 @@ import Header from "../components/Header/Header";
 import kse from "../assets/krakatau-engineering.png";
 import kti from "../assets/krakatau-tirta.png";
 import kal from "../assets/krakatau-logistik.png";
+import sgi from "../assets/sevengates.png";
 import pp from "../assets/pt-pp.png";
 import dindikbud from "../assets/dindikbud.png";
 import "../style/Client.style.css";
@@ -29,6 +30,11 @@ const Clients = () => {
       img: dindikbud,
       alt: "dindikbud",
       link: "https://dindikbud.bantenprov.go.id/",
+    },
+    {
+      img: sgi,
+      alt: "seven-gates-indonesia",
+      link: "https://www.sevengates.co.id/",
     },
   ];
   return (

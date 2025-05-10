@@ -14,7 +14,7 @@ const Footer = () => {
         </div>
         <div className="footer-top-item">
           <img src={phone} alt="phone-icon" />
-          <h4>082118401473</h4>
+          <h4>0813-1996-7235</h4>
         </div>
       </div>
       <div className="footer-center">
@@ -54,7 +54,7 @@ const Footer = () => {
             Jl. Kantor Kecamatan Gerogol No. 208 Rawaarum, Gerogol, Cilegon,
             Banten, 42436
           </h4>
-          <h4>Phone: 082118401473</h4>
+          <h4>Phone: 0813-1996-7235</h4>
           <a
             href="https://drive.google.com/file/d/1KzIEwMleM5g78aAjTiUFauCUvGXUAh1n/view?usp=sharing"
             target="_blank"

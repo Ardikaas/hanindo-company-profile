@@ -75,7 +75,7 @@
 
 .header-link-small{
   position: absolute;
-  margin-top: 65px;
+  margin-top: 75px;
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.4s ease-in-out;
