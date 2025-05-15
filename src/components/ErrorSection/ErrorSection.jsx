@@ -1,3 +1,5 @@
+import "./ErrorSection.style.css";
+
 const ErrorSection = () => {
   return (
     <div className="error-container">

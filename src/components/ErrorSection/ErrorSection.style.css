@@ -1,0 +1,38 @@
+.error-container{
+  padding: 50px 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 20px;
+}
+
+.error-container > h1{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 2rem;
+}
+.error-container > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+  max-width: 550px;
+  width: 100%;
+  display: flex;
+  text-align: center;
+}
+
+@media (max-width: 768px){
+  .error-container{
+    padding: 50px 50px;
+  }
+  .error-container > h1{
+    font-size: 1.8rem;
+  }
+  .error-container > h6{
+    font-size: 0.8rem;
+  }
+}
