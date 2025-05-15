@@ -21,7 +21,6 @@ const Contact = () => {
     e.preventDefault();
     setStatusMessage("");
 
-    // Validasi wajib isi
     if (
       !userFirstName.trim() ||
       !userLastName.trim() ||
@@ -69,7 +68,6 @@ const Contact = () => {
       });
   };
 
-  // Style tombol berdasarkan status
   const getButtonClass = () => {
     if (isSending) return "sending";
     if (statusMessage.includes("success")) return "success";

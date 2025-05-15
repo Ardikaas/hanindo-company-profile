@@ -5,6 +5,8 @@ import kti from "../../assets/krakatau-tirta.png";
 import kal from "../../assets/krakatau-logistik.png";
 import sgi from "../../assets/sevengates.png";
 import pp from "../../assets/pt-pp.png";
+import ks from "../../assets/kokoh-semesta.png";
+import jel from "../../assets/jurong-lestari.png";
 import dindikbud from "../../assets/dindikbud.png";
 import sertif1 from "../../assets/sertif1.png";
 import sertif2 from "../../assets/sertif2.png";
@@ -49,6 +51,16 @@ const LandingSection = () => {
       img: sgi,
       alt: "seven-gates-indonesia",
       link: "https://www.sevengates.co.id/",
+    },
+    {
+      img: jel,
+      alt: "jurong-engineering-lestari",
+      link: "https://jel.com.sg/",
+    },
+    {
+      img: ks,
+      alt: "kokoh-semesta",
+      link: "https://www.kokohsemesta.com/",
     },
   ];
   const clientList = [...clients, ...clients, ...clients];

@@ -21,10 +21,14 @@ const Footer = () => {
         <h4>
           PT. Hanindo Bakti Sejahtera adalah perusahaan yang bergerak di bidang
           konstruksi, perawatan gedung, pengolahan industri, dan pengadaan
-          barang. Spesialisasi kami adalah plastik engineering, termasuk
-          fabrikasi dan pemasangan liner untuk Hopper, Chutu, Dump Truck, dan
-          Silo. Kami berkomitmen menjadi penyedia jasa terpercaya untuk
-          mendukung kemajuan ekonomi daerah dan nasional.
+          barang. Kami memiliki spesialisasi dalam plastic engineering, termasuk
+          fabrikasi dan pemasangan liner untuk Hopper, Chute, Dump Truck, dan
+          Silo. Selain itu, kami juga unggul dalam pengerjaan steel structure
+          untuk berbagai kebutuhan industri, mulai dari pembangunan rangka baja,
+          warehouse, hingga struktur penunjang lainnya. Dengan pengalaman dan
+          keahlian teknis yang mumpuni, kami berkomitmen menjadi mitra
+          terpercaya dalam mendukung kemajuan ekonomi di tingkat daerah maupun
+          nasional.
         </h4>
         <div className="footer-center-center">
           <div className="footer-cc-li">
