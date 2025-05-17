@@ -161,6 +161,54 @@
   color: #D3A24A;
 }
 
+.landing-service-section-card-item-link{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #DFE0DF;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  transition: ease-in 0.3s;
+  background-color: #2550A4;
+  text-decoration: none;
+}
+
+.landing-service-section-card-item-link > img{
+  width: 25px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 13px;  
+}
+
+.landing-service-section-card-item-link > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.landing-service-section-card-item-link > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.landing-service-section-card-item-link:hover{
+  background-color: #F4F4F3;
+  border: 1px solid #2550A4;
+}
+
+.landing-service-section-card-item-link:hover > h4{
+  color: #2550A4;
+}
+.landing-service-section-card-item-link:hover > h6{
+  color: #3c3c3b;
+}
+
 .landing-about-section{
   display: flex;
   flex-direction: column;
@@ -529,6 +577,16 @@
   .landing-service-section-card-item > a{
     font-size: 0.7rem;
   }
+  .landing-service-section-card-item-link > img{
+    width: 20px;
+    padding: 10px;  
+  }
+  .landing-service-section-card-item-link > h4{
+    font-size: 1.3rem;
+  }
+  .landing-service-section-card-item-link > h6{
+    font-size: 0.7rem;
+  }
   .landing-about-section{
     padding: 50px 50px;
   }
@@ -606,7 +664,6 @@
 
 
 @media (max-width: 480px){
-  
   .landing-overview-section{
     flex-direction: column-reverse;
     align-items: center;
@@ -666,6 +723,16 @@
     font-size: 0.7rem;
   }
   .landing-service-section-card-item > a{
+    font-size: 0.7rem;
+  }
+  .landing-service-section-card-item-link > h4{
+    font-size: 1.2rem;
+    width: 100%;
+    max-width: 250px;
+  }
+  .landing-service-section-card-item-link > h6{
+    width: 100%;
+    max-width: 250px;
     font-size: 0.7rem;
   }
   .landing-about-section-top-text > h4{

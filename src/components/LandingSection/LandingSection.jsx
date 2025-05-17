@@ -19,8 +19,8 @@ import wallpaper from "../../assets/wallpaper.png";
 import blueprint from "../../assets/blueprint.png";
 import fabrication from "../../assets/phabricator-icon.png";
 import supply from "../../assets/boxes-icon.png";
-import anchor from "../../assets/anchor-icon.png";
-import building from "../../assets/building-icon.png";
+import steel from "../../assets/steel-icon.png";
+import next from "../../assets/next-icon.png";
 import right from "../../assets/right-icon.png";
 import left from "../../assets/left-icon.png";
 
@@ -176,19 +176,10 @@ const LandingSection = () => {
                 like hoppers, silos, and dump trucks to prevent wear and
                 corrosion.
               </h6>
-              <a href="/">Learn More</a>
+              <a href="/services/liner-fabrication-and-installation">
+                Learn More
+              </a>
             </div>
-            <div className="landing-service-section-card-item">
-              <img src={anchor} alt="anchor-icon" />
-              <h4>Jetty Fender Pad Installation</h4>
-              <h6>
-                Installation of fender pads at jetties to absorb ship impact and
-                protect harbor structures.
-              </h6>
-              <a href="/">Learn More</a>
-            </div>
-          </div>
-          <div className="landing-service-section-card-item-column">
             <div className="landing-service-section-card-item">
               <img src={supply} alt="supply-icon" />
               <h4>Industrial Equipment Supply</h4>
@@ -196,17 +187,33 @@ const LandingSection = () => {
                 Efficient and precise supply of various industrial tools and
                 equipment based on project needs.
               </h6>
-              <a href="/">Learn More</a>
+              <a href="/services/industrial-equipment-supply">Learn More</a>
             </div>
+          </div>
+          <div className="landing-service-section-card-item-column">
             <div className="landing-service-section-card-item">
-              <img src={building} alt="building-icon" />
-              <h4>Building & Facility Services</h4>
+              <img src={steel} alt="steel-icon" />
+              <h4>Steel Fabrication & Installation</h4>
               <h6>
-                Routine maintenance and repair services for buildings and
-                industrial facilities to ensure operational efficiency.
+                Durable steel structures engineered with precision, perfect for
+                industrial and infrastructure needs.
               </h6>
-              <a href="/">Learn More</a>
+              <a href="/services/steel-fabrication-and-installation">
+                Learn More
+              </a>
             </div>
+            <a
+              className="landing-service-section-card-item-link"
+              href="/services"
+            >
+              <img src={next} alt="next-icon" />
+              <h4>Discover Full Service Capabilities →</h4>
+              <h6>
+                Discover how our full range of services can support your
+                business, from concept to completion, with precision and
+                dedication at every step.
+              </h6>
+            </a>
           </div>
         </div>
       </div>

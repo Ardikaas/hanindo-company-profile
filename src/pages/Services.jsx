@@ -139,7 +139,7 @@ const Services = () => {
             <div className="service-card">
               <div className="service-card-top">
                 <img src={steel} alt="steel-icon" />
-                <h1>Steel Structure Works</h1>
+                <h1>Steel Fabrication & Installation</h1>
               </div>
               <div className="service-card-bottom">
                 <img src={steelImage} alt="steel-work-img" />
@@ -150,7 +150,9 @@ const Services = () => {
                     solutions are engineered for strength, precision, and
                     adaptability across various project scales.
                   </h6>
-                  <a href="/services/steel-structure-works">Learn more.</a>
+                  <a href="/services/steel-fabrication-and-installation">
+                    Learn more.
+                  </a>
                 </div>
               </div>
             </div>
