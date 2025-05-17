@@ -155,11 +155,13 @@ const About = () => {
             <div className="about-ceo-section-text-top">
               <h1>Message from Our Director</h1>
               <h6>
-                In every project we take on, our goal is simple: to provide real
-                value through reliable service, innovation, and a commitment to
-                quality. We believe that consistency, integrity, and
-                collaboration are the keys to long-term success in any industry.
-                Each step we take is grounded in a strong sense of
+                Quality and safety are always at the heart of our spirit, our
+                highest priorities to ensure every project is completed
+                successfully. In every project we take on, our goal is simple,
+                to provide real value through reliable service, innovation, and
+                a commitment to quality. We believe that consistency, integrity,
+                and collaboration are the keys to long term success in any
+                industry. Each step we take is grounded in a strong sense of
                 responsibility not only to our clients, but also to the
                 communities and environment around us.
                 <br />

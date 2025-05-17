@@ -87,6 +87,7 @@
   font-size: 0.9rem;
   max-width: 550px;
   width: 100%;
+  text-align: justify;
 }
 
 .about-ceo-section-text-bottom > h4{
@@ -276,6 +277,7 @@
   font-size: 0.9rem;
   max-width: 550px;
   width: 100%;
+  text-align: justify;
 }
 
 .about-mission{
@@ -318,6 +320,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: justify;
 }
 
 .about-mission-left > h6 > ul{
