@@ -200,7 +200,7 @@ const LandingSection = () => {
             </div>
             <div className="landing-service-section-card-item">
               <img src={building} alt="building-icon" />
-              <h4>Building & Industrial Facility Maintenance</h4>
+              <h4>Building & Facility Services</h4>
               <h6>
                 Routine maintenance and repair services for buildings and
                 industrial facilities to ensure operational efficiency.

@@ -1,0 +1,141 @@
+.services-container{
+  margin-top: 85px;
+}
+
+.services-bg-big{
+  display: block;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.services-bg-small{
+  display: none;
+  max-width: 100vw;
+  width: 100%;
+}
+
+.services-card-section{
+  padding: 50px 90px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.services-card-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.service-card{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 10px;
+  border: 1px solid #DFE0DF;
+  border-radius: 10px;
+  max-width: 620px;
+  width: auto;
+}
+
+.service-card-top{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-card-top > img{
+  width: 30px;
+  height: auto;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 13px;  
+}
+
+.service-card-top > h1{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 1.8rem;
+}
+
+.service-card-bottom{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.service-card-bottom > img{
+  max-width: 200px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.service-card-bottom-text{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.service-card-bottom-text > h6{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.service-card-bottom-text > a{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #2550A4;
+  font-size: 0.9rem;
+  text-decoration: none;
+  text-align: justify;
+}
+
+@media (max-width: 1080px){
+  .service-card-bottom > img{
+    max-width: 150px;
+  }
+}
+@media (max-width: 960px){
+  .service-card-bottom > img{
+    margin-top: 10px;
+    max-width: 300px;
+  }
+  .service-card-bottom{
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+}
+@media (max-width: 768px){
+  .services-card-section{
+    align-items: center;
+    padding: 50px 50px;
+    gap: 25px;
+  }
+  .services-card-row{
+    flex-direction: column;
+    gap: 25px;
+  }  
+  .service-card-top > h1{
+    font-size: 1.5rem;
+  }
+  .service-card-bottom > img{
+    max-width: 400px;
+  }
+}
+@media (max-width: 480px){
+  .services-bg-big{
+    display: none;
+  }
+  .services-bg-small{
+    display: block;
+  }
+}
