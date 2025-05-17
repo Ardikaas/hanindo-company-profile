@@ -112,7 +112,7 @@
   border-radius: 10px;
   padding: 20px;
   max-width: 300px;
-  width: 100%;
+  width: auto;
   transition: ease-in 0.3s;
 }
 
@@ -169,7 +169,7 @@
   border-radius: 10px;
   padding: 20px;
   max-width: 300px;
-  width: 100%;
+  width: auto;
   transition: ease-in 0.3s;
   background-color: #2550A4;
   text-decoration: none;
@@ -562,7 +562,6 @@
   }
   .landing-service-section-card-item{
     max-width: 250px;
-    width: 100%;
   }
   .landing-service-section-card-item > img{
     width: 20px;
@@ -576,6 +575,9 @@
   }
   .landing-service-section-card-item > a{
     font-size: 0.7rem;
+  }
+  .landing-service-section-card-item-link{
+    max-width: 250px;
   }
   .landing-service-section-card-item-link > img{
     width: 20px;
@@ -706,7 +708,6 @@
   }
   .landing-service-section-card-item{
     max-width: 300px;
-    width: 100%;
   }
   .landing-service-section-card-item > img{
     width: 20px;
@@ -724,6 +725,9 @@
   }
   .landing-service-section-card-item > a{
     font-size: 0.7rem;
+  }
+  .landing-service-section-card-item-link{
+    max-width: 300px;
   }
   .landing-service-section-card-item-link > h4{
     font-size: 1.2rem;
