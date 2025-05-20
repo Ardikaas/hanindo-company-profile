@@ -234,7 +234,7 @@ const LandingSection = () => {
           <img src={blueprint} alt="blueprint" />
           <div className="landing-about-section-bottom-text">
             <div className="landing-about-section-bottom-vision">
-              <h1>Our Vission</h1>
+              <h1>Our Vision</h1>
               <h6>
                 To provide exceptional construction services that exceed client
                 expectations through innovation, quality craftsmanship, and a
@@ -243,7 +243,7 @@ const LandingSection = () => {
                 <a href="/about">More</a>
               </h6>
             </div>
-            <a href="/about">Our Mision</a>
+            <a href="/about">Our Mission</a>
             <a href="/about">Our History</a>
           </div>
         </div>

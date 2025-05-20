@@ -32,13 +32,13 @@ const Footer = () => {
         </h4>
         <div className="footer-center-center">
           <div className="footer-cc-li">
-            <a href="/overview">
+            <a href="/about">
               <img src={arrow} alt="" />
               <h4>About</h4>
             </a>
-            <a href="/overview">
+            <a href="/services">
               <img src={arrow} alt="" />
-              <h4>Service</h4>
+              <h4>Services</h4>
             </a>
           </div>
           <div className="footer-cc-li">

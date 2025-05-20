@@ -1,5 +1,5 @@
 .about-container{
-  margin-top: 85px;
+  margin-top: 75px;
 }
 
 .about-bg-big{
@@ -49,9 +49,10 @@
   flex-direction: row;
   gap: 5px;
   text-decoration: none;
+  width: fit-content;
 }
 
-.about-overview-text> a > h4{
+.about-overview-text > a > h4{
   font-family: "Plus Jakarta Sans", sans-serif;
   color: #2550A4;
   font-weight: 400;
