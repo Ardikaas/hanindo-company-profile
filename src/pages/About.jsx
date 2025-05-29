@@ -86,7 +86,7 @@ const About = () => {
               Indonesian industry.
             </h6>
             <a
-              href="https://drive.google.com/file/d/1KzIEwMleM5g78aAjTiUFauCUvGXUAh1n/view?usp=sharing"
+              href="https://drive.google.com/file/d/1ngO9jx8NL9hWyiek0fVNH8aP6KJfIPIM/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
             >
