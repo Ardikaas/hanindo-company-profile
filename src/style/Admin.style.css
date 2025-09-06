@@ -1,0 +1,241 @@
+.message-container{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 50px 90px;
+  margin-top: 75px;
+}
+
+.message-container > h1{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 1.8rem;
+}
+
+.message-section{
+  display: flex;
+  flex-direction: row;
+}
+
+.message-section-left{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-right: 20px;
+  border-right: 3px solid #2550A4;
+  max-width: 480px;
+  width: 100%;
+  max-height: 450px;
+  overflow: auto;
+}
+
+.message-card-column{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.message-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #dfe0df;
+}
+
+.message-card-ac{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 20px;
+  cursor: pointer;
+  background-color: #2550A4;
+  border-radius: 10px;
+  border: 1px solid #dfe0df;
+}
+
+.message-card-text{
+  display: flex;
+  flex-direction: row;
+  gap: 10px ;
+}
+
+.message-card-text > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #2550A4;
+  font-size: 0.8rem;
+  
+}
+.message-card-text > h3{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.8rem;
+  max-width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-card-text-ac{
+  display: flex;
+  flex-direction: row;
+  gap: 10px ;
+}
+
+.message-card-text-ac > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #dfe0df;
+  font-size: 0.8rem;
+  
+}
+
+.message-card-text-ac > h3{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #dfe0df;
+  font-size: 0.8rem;
+  max-width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-card-text-msg{
+  display: flex;
+  flex-direction: row;
+  gap: 10px ;
+}
+
+.message-card-text-msg > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #2550A4;
+  font-size: 0.8rem;
+}
+
+.message-card-text-msg > h3{
+  text-align: left;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.8rem;
+  max-width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-card-text-msg-ac{
+  display: flex;
+  flex-direction: row;
+  gap: 10px ;
+}
+
+.message-card-text-msg-ac > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  color: #dfe0df;
+  font-size: 0.8rem;
+}
+
+.message-card-text-msg-ac > h3{
+  text-align: left;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #dfe0df;
+  font-size: 0.8rem;
+  max-width: 230px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.message-card-right > h4{
+  text-align: right;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.8rem;
+}
+
+.message-card-right-ac > h4{
+  text-align: right;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #dfe0df;
+  font-size: 0.8rem;
+}
+
+.message-section-right{
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #dfe0df;
+  padding: 20px;
+  margin-left: 20px;
+  max-width: 700px;
+  width: 100%;
+  height: 400px;
+}
+
+.message-section-right-top{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.message-section-right-tr > h4{
+  text-align: right;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.8rem;
+}
+
+.message-section-right-bot::before{
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: #2550A4;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.message-section-right-bot > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.8rem;
+}
+
+.message-section-right > h3{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.8rem;
+
+}
+
+@media (max-width: 1080px){
+  
+}
+@media (max-width: 960px){
+
+}
+
+@media (max-width: 768px){
+
+}
+
+@media (max-width: 480px){
+
+}

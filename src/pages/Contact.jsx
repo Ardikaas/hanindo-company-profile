@@ -4,7 +4,7 @@ import phone from "../assets/phone-icon.png";
 import mail from "../assets/mail-icon.png";
 import pin from "../assets/pin-icon.png";
 import { useState } from "react";
-import emailjs from "@emailjs/browser";
+import axios from "axios";
 import "../style/Contact.style.css";
 
 const Contact = () => {
@@ -17,7 +17,7 @@ const Contact = () => {
   const [isSending, setIsSending] = useState(false);
   const [statusMessage, setStatusMessage] = useState("");
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setStatusMessage("");
 
@@ -36,21 +36,20 @@ const Contact = () => {
 
     setIsSending(true);
 
-    emailjs
-      .send(
-        "service_hh2vrgh",
-        "template_f65gykp",
+    try {
+      const res = await axios.post(
+        "https://devlabfortirta.cloud/hanindo-api/mail",
         {
-          name: `${userFirstName} ${userLastName}`,
+          first_name: userFirstName,
+          last_name: userLastName,
           email: userEmail,
           phone: userPhone,
-          title: subject,
+          subject: subject,
           message: message,
-        },
-        "auUdoSqsR0VfrFDyo"
-      )
-      .then(() => {
-        setIsSending(false);
+        }
+      );
+
+      if (res.data.status?.code === 200) {
         setStatusMessage("Message sent successfully!");
         setFirstName("");
         setLastName("");
@@ -58,14 +57,16 @@ const Contact = () => {
         setUserPhone("");
         setMessage("");
         setSubject("");
-        setTimeout(() => setStatusMessage(""), 5000);
-      })
-      .catch((error) => {
-        setIsSending(false);
+      } else {
         setStatusMessage("Failed to send message. Please try again.");
-        console.error(error);
-        setTimeout(() => setStatusMessage(""), 5000);
-      });
+      }
+    } catch (error) {
+      console.error(error);
+      setStatusMessage("Failed to send message. Please try again.");
+    } finally {
+      setIsSending(false);
+      setTimeout(() => setStatusMessage(""), 5000);
+    }
   };
 
   const getButtonClass = () => {
