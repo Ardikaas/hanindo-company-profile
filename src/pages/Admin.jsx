@@ -116,6 +116,14 @@ const Admin = () => {
                       </h3>
                     </div>
                     <div className="message-card-text">
+                      <h4>Email : </h4>
+                      <h3>{selectedMessage.email}</h3>
+                    </div>
+                    <div className="message-card-text">
+                      <h4>Phone : </h4>
+                      <h3>{selectedMessage.phone}</h3>
+                    </div>
+                    <div className="message-card-text">
                       <h4>Subject : </h4>
                       <h3>{selectedMessage.subject}</h3>
                     </div>
