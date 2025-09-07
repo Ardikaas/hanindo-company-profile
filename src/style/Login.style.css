@@ -1,0 +1,213 @@
+.login-container{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card{
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #2550A4;
+  border-radius: 10px;
+  padding: 30px 20px;
+  gap: 20px;
+  max-width: 300px;
+  width: 100%;
+}
+
+.login-card > img{
+  align-self: center;
+  width: 150px;
+  margin-bottom: 5px;
+}
+
+.login-card > h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #a42525;
+  font-size: 0.9rem;
+}
+
+.login-card-user{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.login-card-user > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+}
+
+.login-card-user > input{
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #3c3c3b;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+}
+
+.login-card-user > input:focus{
+  outline: none;
+  color: #3c3c3b;
+}
+
+.login-card-pass{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.login-card-pass > h4{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+}
+
+.login-card-pass-trick{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid #3c3c3b;
+  border-radius: 3px;
+}
+
+.login-card-pass-trick > input{
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  color: #3c3c3b;
+  font-size: 0.9rem;
+}
+
+.login-card-pass-trick > input:focus{
+  outline: none;
+  color: #3c3c3b;
+}
+
+.login-card-pass-trick > button{
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+}
+.login-card-pass-trick > button:focus{
+  outline: none;
+}
+
+.login-card-pass-trick > button > img{
+  width: 20px;
+  margin-right: 5px;
+}
+
+.login-card-pass > button{
+  align-self: flex-end; 
+  width: fit-content;
+  text-align: right;
+  border: none;
+  background-color: #ffffff;
+  color: #2550A4;
+  cursor: pointer;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.7rem;
+}
+
+.login-card > button{
+  margin-top: 10px;
+  display: flex;
+  align-self: center;
+  border: none;
+  background-color: #2550A4;
+  padding: 10px 35px;
+  color: #dfe0df;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  justify-content: center;
+  border-radius: 40px;
+  border: 1px solid  #2550A4;
+  transition: ease-in 0.3s;
+}
+
+.login-card > button:hover{
+  background-color: #ffffff;
+  color: #2550A4;
+}
+
+@media (max-width: 1080px){
+  
+}
+@media (max-width: 960px){
+  .login-card{
+    padding: 30px 20px;
+    gap: 20px;
+    max-width: 250px;
+    width: 100%;
+  }
+  .login-card > img{
+    width: 140px;
+  }
+}
+
+@media (max-width: 768px){
+  .login-card-user > h4{
+    font-size: 0.8rem;
+  }
+  .login-card-user > input{
+    font-size: 0.8rem;
+  }
+  .login-card-pass > h4{
+    font-size: 0.8rem;
+  }
+  .login-card-pass-trick > input{
+    font-size: 0.8rem;
+  }
+  .login-card-pass > button{
+    font-size: 0.65rem;
+  }
+  .login-card > button{
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px){
+  .login-card{
+    padding: 30px 20px;
+    gap: 20px;
+    max-width: 230px;
+    width: 100%;
+  }
+  .login-card > img{
+    width: 120px;
+  }
+  .login-card-user > h4{
+    font-size: 0.7rem;
+  }
+  .login-card-user > input{
+    font-size: 0.7rem;
+  }
+  .login-card-pass > h4{
+    font-size: 0.7rem;
+  }
+  .login-card-pass-trick > input{
+    font-size: 0.7rem;
+  }
+  .login-card-pass > button{
+    font-size: 0.6rem;
+  }
+  .login-card > button{
+    font-size: 0.7rem;
+  }
+}
