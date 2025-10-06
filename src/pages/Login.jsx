@@ -15,10 +15,21 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [statusMessage, setStatusMessage] = useState("");
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleForgotClick = () => {
     setForgotText("Forgot Password? (chat dika aja a feb)");
+  };
+
+  const checkServerBeforeLogin = async () => {
+    try {
+      const res = await axios.get("https://devlabfortirta.cloud/hanindo-api/");
+      return res.status === 200;
+    } catch (error) {
+      console.error("Server check failed:", error);
+      return false;
+    }
   };
 
   const handleLogin = async () => {
@@ -27,7 +38,19 @@ const Login = () => {
       return;
     }
 
+    setLoading(true);
+    setStatusMessage("Mengecek server...");
+
+    const serverActive = await checkServerBeforeLogin();
+    if (!serverActive) {
+      setStatusMessage("Server tidak dapat dihubungi");
+      setForgotText("Forgot Password?");
+      setLoading(false);
+      return;
+    }
+
     try {
+      setStatusMessage("Menghubungkan ke server...");
       const response = await axios.post(
         "https://devlabfortirta.cloud/hanindo-api/login",
         {
@@ -38,14 +61,22 @@ const Login = () => {
 
       if (response.data.status?.code === 200) {
         setStatusMessage("Login berhasil!");
-        Cookies.set("admin", "true", { expires: 25 / (24 * 60) });
+        Cookies.set("Beelzebub", "true", { expires: 25 / (24 * 60) });
         navigate("/admin");
       } else {
         setStatusMessage("Login gagal: " + response.data.status?.message);
       }
     } catch (error) {
       console.error("Login error:", error);
-      setStatusMessage("Username atau Password salah!");
+      if (error.code === "ERR_NETWORK") {
+        setStatusMessage("Server tidak merespons atau sedang offline");
+        setForgotText("Telfon dika langsung a feb!!!");
+      } else {
+        setStatusMessage("Username atau Password salah!");
+        setForgotText("Forgot Password?");
+      }
+    } finally {
+      setLoading(false);
     }
   };
 

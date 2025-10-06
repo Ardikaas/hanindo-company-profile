@@ -15,7 +15,7 @@ import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 
 const ProtectedRoute = ({ children }) => {
-  const isAdmin = Cookies.get("admin");
+  const isAdmin = Cookies.get("Beelzebub");
   return isAdmin ? children : <Navigate to="/login" replace />;
 };
 

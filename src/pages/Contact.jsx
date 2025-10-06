@@ -63,6 +63,7 @@ const Contact = () => {
     } catch (error) {
       console.error(error);
       setStatusMessage("Failed to send message. Please try again.");
+      alert("Server tidak dapat dihubungi. Pastikan koneksi internet stabil.");
     } finally {
       setIsSending(false);
       setTimeout(() => setStatusMessage(""), 5000);

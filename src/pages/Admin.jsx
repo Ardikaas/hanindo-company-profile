@@ -3,6 +3,7 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import "../style/Admin.style.css";
 import axios from "axios";
+import inbox from "../assets/inbox-icon.png";
 
 const Admin = () => {
   const [messages, setMessages] = useState([]);
@@ -100,6 +101,27 @@ const Admin = () => {
                   </button>
                 );
               })}
+            </div>
+            {/* <button>
+              <img src={inbox} alt="inbox-icon" />
+            </button> */}
+            <div className="msg-dd-column">
+              <button className="msg-dd-card">
+                <h4>01/02/2025 - 22:00</h4>
+                <h4>Ardika Aji Setiawan</h4>
+              </button>
+              <button className="msg-dd-card">
+                <h4>01/02/2025 - 22:00</h4>
+                <h4>Ardika Aji Setiawan</h4>
+              </button>
+              <button className="msg-dd-card">
+                <h4>01/02/2025 - 22:00</h4>
+                <h4>Ardika Aji Setiawan</h4>
+              </button>
+              <button className="msg-dd-card">
+                <h4>01/02/2025 - 22:00</h4>
+                <h4>Ardika Aji Setiawan</h4>
+              </button>
             </div>
           </div>
           <div className="message-section-right">

@@ -73,6 +73,7 @@ const Footer = () => {
         <h4>
           Copyright © 2025 PT Hanindo Bakti Sejahtera. All Right Reserved.
         </h4>
+        <a href="/admin">admin</a>
       </div>
     </div>
   );
