@@ -46,6 +46,10 @@ const Footer = () => {
               <img src={arrow} alt="" />
               <h4>Client</h4>
             </a>
+            <a href="/portfolio">
+              <img src={arrow} alt="" />
+              <h4>Portfolio</h4>
+            </a>
             <a href="/contact">
               <img src={arrow} alt="" />
               <h4>Contact</h4>

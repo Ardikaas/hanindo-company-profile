@@ -1,107 +1,61 @@
-.clients-container{
+.clients-container {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 50px 90px;
-  margin-top: 75px;
+  gap: var(--gap);
+  padding: var(--section-space) var(--page-inset);
 }
-
-.clients-card-row{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+.clients-card-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
 }
-
-.client-card{
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 10px;
-  max-width: 650px;
-  border: 1px solid #DFE0DF;
-  width: auto;
-  padding: 20px;
-  border-radius: 10px;
+.client-card {
+  display: grid;
+  grid-template-columns: minmax(0, .6fr) minmax(0, 1.4fr);
+  align-items: start;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 1.75rem);
+  border: 1px solid #dfe0df;
+  border-radius: .625rem;
 }
-
-.client-card > img{
-  max-width: 200px;
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #DFE0DF;
-  width: auto;
+.client-card > img {
+  width: 100%;
+  max-width: 12rem;
+  padding: .75rem;
+  border: 1px solid #dfe0df;
+  border-radius: .625rem;
 }
-
-.client-card-right{
+.client-card-right {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: .75rem;
 }
-
-.client-card-right > h1{
-  font-family: "Plus Jakarta Sans", sans-serif;
+.client-card-right > h1 {
+  font-size: clamp(1.25rem, 1.6vw, 1.8rem);
   font-weight: 600;
-  color: #3c3c3b;
-  font-size: 1.8rem;
-  max-width: 400px;
 }
-
-.client-card-right > h6{
-  font-family: "Plus Jakarta Sans", sans-serif;
+.client-card-right > h6 {
+  font-size: 1rem;
   font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  text-align: justify;
-  max-width: 400px;
 }
-
-.client-card-right > a{
-  font-family: "Plus Jakarta Sans", sans-serif;
+.client-card-right > a {
+  font-size: 1rem;
   font-weight: 600;
-  color: #2550A4;
-  font-size: 0.9rem;
-  text-decoration: none;
+  color: #2550a4;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
 }
-
-@media (max-width: 1080px){
-  .client-card > img{
-    max-width: 150px;
+@media (max-width: 1100px) {
+  .client-card {
+    grid-template-columns: minmax(0, 1fr);
   }
-}
-@media (max-width: 960px){
-  .client-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .client-card > img{
-    max-width: 200px;
+  .client-card > img {
+    justify-self: center;
   }
 }
-@media (max-width: 768px){
-  .clients-container{
-    display: flex;
-    gap: 20px;
-    padding: 50px 50px;
-  }
-  .clients-card-row{
-    flex-direction: column;
-  }
-  .client-card-right > h1{
-    font-size: 1.5rem;
-    max-width: none;
-    text-align: center;
-  }
-  .client-card-right > h6{
-    font-size: 0.9rem;
-    max-width: none;
-  }
-}
-@media (max-width: 480px){
-  .services-bg-big{
-    display: none;
-  }
-  .services-bg-small{
-    display: block;
+@media (max-width: 700px) {
+  .clients-card-row {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

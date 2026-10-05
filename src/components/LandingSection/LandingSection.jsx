@@ -1,220 +1,88 @@
-import "./LandingSection.style.css";
-import { useState, useRef, useEffect } from "react";
-import kse from "../../assets/krakatau-engineering.png";
-import kti from "../../assets/krakatau-tirta.png";
-import kal from "../../assets/krakatau-logistik.png";
-import sgi from "../../assets/sevengates.png";
-import pp from "../../assets/pt-pp.png";
-import ks from "../../assets/kokoh-semesta.png";
-import jel from "../../assets/jurong-lestari.png";
-import dindikbud from "../../assets/dindikbud.png";
-import sertif1 from "../../assets/sertif1.png";
-import sertif2 from "../../assets/sertif2.png";
-import sertif3 from "../../assets/sertif3.png";
-import sertif4 from "../../assets/sertif4.png";
-import sertif5 from "../../assets/sertif5.png";
-import sertif6 from "../../assets/sertif6.jpg";
-import sertif7 from "../../assets/sertif7.jpg";
-import wallpaper from "../../assets/wallpaper.png";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
+import useResource from "../../hooks/useResource";
+import { mediaUrl } from "../../lib/api";
+import ContentState from "../ContentState";
+import Pagination from "../Pagination";
 import blueprint from "../../assets/blueprint.png";
-import fabrication from "../../assets/phabricator-icon.png";
-import supply from "../../assets/boxes-icon.png";
-import steel from "../../assets/steel-icon.png";
 import next from "../../assets/next-icon.png";
 import right from "../../assets/right-icon.png";
 import left from "../../assets/left-icon.png";
-
-const LandingSection = () => {
-  const clients = [
-    {
-      img: kse,
-      alt: "krakatau-engineering",
-      link: "https://www.krakataueng.co.id/",
-    },
-    {
-      img: kti,
-      alt: "krakatau-tirta",
-      link: "https://www.krakatautirta.co.id/",
-    },
-    {
-      img: kal,
-      alt: "krakatau-logistik",
-      link: "https://krakatau-argologistics.com/",
-    },
-    { img: pp, alt: "pt-pp", link: "https://www.ptpp.co.id/en" },
-    {
-      img: dindikbud,
-      alt: "dindikbud",
-      link: "https://dindikbud.bantenprov.go.id/",
-    },
-    {
-      img: sgi,
-      alt: "seven-gates-indonesia",
-      link: "https://www.sevengates.co.id/",
-    },
-    {
-      img: jel,
-      alt: "jurong-engineering-lestari",
-      link: "https://jel.com.sg/",
-    },
-    {
-      img: ks,
-      alt: "kokoh-semesta",
-      link: "https://www.kokohsemesta.com/",
-    },
-  ];
-  const clientList = [...clients, ...clients, ...clients];
-  const certificateImages = [
-    sertif1,
-    sertif2,
-    sertif3,
-    sertif4,
-    sertif5,
-    sertif6,
-    sertif7,
-  ];
-  const [itemsPerPage, setItemsPerPage] = useState(3);
-  const [currentIndex, setCurrentIndex] = useState(itemsPerPage);
-  const [isTransitioning, setIsTransitioning] = useState(true);
+import "./LandingSection.style.css";
+export default function LandingSection() {
+  const home = useResource("/home");
+  const services = useResource("/content/service?limit=3");
+  const clients = useResource("/content/client?limit=100");
+  const [certificatePage, setCertificatePage] = useState(1);
+  const certificates = useResource(
+    "/content/certificate?limit=12&page=" + certificatePage,
+  );
   const trackRef = useRef(null);
-
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth <= 480) {
-        setItemsPerPage(1);
-      } else if (window.innerWidth <= 768) {
-        setItemsPerPage(2);
-      } else {
-        setItemsPerPage(3);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  const duplicatedImages = [
-    ...certificateImages.slice(-itemsPerPage),
-    ...certificateImages,
-    ...certificateImages.slice(0, itemsPerPage),
-  ];
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => prev + 1);
-    setIsTransitioning(true);
+    trackRef.current?.scrollTo(0, 0);
+  }, [certificatePage]);
+  const scrollCertificates = (direction) => {
+    const track = trackRef.current;
+    if (!track?.firstElementChild) return;
+    const step =
+      track.firstElementChild.getBoundingClientRect().width +
+      parseFloat(getComputedStyle(track).columnGap);
+    const end = track.scrollWidth - track.clientWidth;
+    track.scrollTo({
+      left:
+        direction > 0 && track.scrollLeft >= end - 2
+          ? 0
+          : direction < 0 && track.scrollLeft <= 2
+            ? end
+            : track.scrollLeft + direction * step,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "auto"
+        : "smooth",
+    });
   };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => prev - 1);
-    setIsTransitioning(true);
-  };
-
-  useEffect(() => {
-    const total = certificateImages.length;
-    if (currentIndex === duplicatedImages.length - itemsPerPage) {
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(itemsPerPage);
-      }, 500);
-    }
-
-    if (currentIndex === 0) {
-      setTimeout(() => {
-        setIsTransitioning(false);
-        setCurrentIndex(total);
-      }, 500);
-    }
-  }, [
-    currentIndex,
-    certificateImages.length,
-    duplicatedImages.length,
-    itemsPerPage,
-  ]);
-
-  const getTransform = () => {
-    const widthPercentage = 100 / itemsPerPage;
-    return `translateX(-${currentIndex * widthPercentage}%)`;
-  };
-
+  const partners = clients.data || [];
   return (
     <div className="landing-container">
-      <div className="landing-overview-section">
-        <div className="landing-overview-section-text">
-          <h1>
-            Delivering Engineering Integrity, Empowering Industrial Progress.
-          </h1>
-          <div className="landing-overview-section-text-bridge">
-            <h4>
-              We specialize in plastic engineering solutions, construction
-              services, and industrial support. From liner installations for
-              hoppers and silos to comprehensive building maintenance, we
-              deliver sustainable solutions with a commitment to quality,
-              safety, and long-term partnership.
-            </h4>
-            <a href="/contact">Contact Us</a>
+      <ContentState resource={home} />
+      {home.data && (
+        <div className="landing-overview-section">
+          <div className="landing-overview-section-text">
+            <h1>{home.data.title}</h1>
+            <div className="landing-overview-section-text-bridge">
+              <h4>{home.data.description}</h4>
+              <Link to="/contact">Contact Us</Link>
+            </div>
           </div>
+          <img src={mediaUrl(home.data.image)} alt={home.data.title} />
         </div>
-        <img src={wallpaper} alt="walpaper-img" />
-      </div>
+      )}
       <div className="landing-service-section">
         <h4>Services Tailored to You</h4>
         <h6>
-          We deliver reliable engineering and supply solutions across various
-          industries crafted with precision, built with purpose, and driven by a
-          commitment to excellence in every project we handle.
+          Reliable engineering and supply solutions, crafted with precision and
+          built with purpose.
         </h6>
+        <ContentState resource={services} />
         <div className="landing-service-section-card">
-          <div className="landing-service-section-card-item-column">
-            <div className="landing-service-section-card-item">
-              <img src={fabrication} alt="fabrication-icon" />
-              <h4>Liner Fabrication & Installation</h4>
-              <h6>
-                Fabrication and installation of protective liners on surfaces
-                like hoppers, silos, and dump trucks to prevent wear and
-                corrosion.
-              </h6>
-              <a href="/services/liner-fabrication-and-installation">
-                Learn More
-              </a>
-            </div>
-            <div className="landing-service-section-card-item">
-              <img src={supply} alt="supply-icon" />
-              <h4>Industrial Equipment Supply</h4>
-              <h6>
-                Efficient and precise supply of various industrial tools and
-                equipment based on project needs.
-              </h6>
-              <a href="/services/industrial-equipment-supply">Learn More</a>
-            </div>
-          </div>
-          <div className="landing-service-section-card-item-column">
-            <div className="landing-service-section-card-item">
-              <img src={steel} alt="steel-icon" />
-              <h4>Steel Fabrication & Installation</h4>
-              <h6>
-                Durable steel structures engineered with precision, perfect for
-                industrial and infrastructure needs.
-              </h6>
-              <a href="/services/steel-fabrication-and-installation">
-                Learn More
-              </a>
-            </div>
-            <a
-              className="landing-service-section-card-item-link"
-              href="/services"
+          {services.data?.map((item) => (
+            <article
+              className="landing-service-section-card-item"
+              key={item._id}
             >
-              <img src={next} alt="next-icon" />
-              <h4>Discover Full Service Capabilities →</h4>
-              <h6>
-                Discover how our full range of services can support your
-                business, from concept to completion, with precision and
-                dedication at every step.
-              </h6>
-            </a>
-          </div>
+              <img src={mediaUrl(item.icon || item.image)} alt="" />
+              <h4>{item.title}</h4>
+              <h6 className="summary-text">{item.description}</h6>
+              <Link to={"/services/" + item._id}>Learn More</Link>
+            </article>
+          ))}
+          <Link
+            className="landing-service-section-card-item-link"
+            to="/services"
+          >
+            <img src={next} alt="" />
+            <h4>Discover Full Service Capabilities →</h4>
+            <h6>Explore how our services can support your next project.</h6>
+          </Link>
         </div>
       </div>
       <div className="landing-about-section">
@@ -222,102 +90,119 @@ const LandingSection = () => {
           <div className="landing-about-section-top-text">
             <h4>About Our Company</h4>
             <h6>
-              With years of experience in construction, building maintenance,
-              and industrial services, we specialize in providing high-quality,
-              innovative, and sustainable solutions designed to meet the
-              specific needs of our clients.
+              With experience in construction, building maintenance, and
+              industrial services, we deliver solutions designed around our
+              clients.
             </h6>
           </div>
-          <a href="/about">Learn More</a>
+          <Link to="/about">Learn More</Link>
         </div>
         <div className="landing-about-section-bottom">
-          <img src={blueprint} alt="blueprint" />
+          <img src={blueprint} alt="Engineering planning" />
           <div className="landing-about-section-bottom-text">
             <div className="landing-about-section-bottom-vision">
               <h1>Our Vision</h1>
               <h6>
-                To provide exceptional construction services that exceed client
-                expectations through innovation, quality craftsmanship, and a
-                commitment to sustainability. We aim to build lasting
-                relationships and create spaces that enhance communities.
-                <a href="/about">More</a>
+                To provide exceptional construction services through innovation,
+                quality craftsmanship, and a commitment to sustainability.{" "}
+                <Link to="/about">More</Link>
               </h6>
             </div>
-            <a href="/about">Our Mission</a>
-            <a href="/about">Our History</a>
+            <Link to="/about">Our Mission</Link>
+            <Link to="/portfolio">Our Portfolio</Link>
           </div>
         </div>
       </div>
       <div className="landing-client-section">
         <h1>Who We Work With</h1>
-        <h6>
-          We are proud to serve a wide range of clients across industries,
-          providing reliable and effective solutions to support their projects
-          and growth.
-        </h6>
-        <div className="client-marquee">
-          <div className="client-track">
-            {[...clientList, ...clientList].map((client, idx) => (
-              <div className="client-item" key={idx}>
-                <a href={client.link} target="_blank" rel="noopener noreferrer">
-                  <div className="client-img-wrapper">
-                    <img
-                      src={client.img}
-                      alt={client.alt}
-                      className="client-img"
-                    />
-                  </div>
-                </a>
-              </div>
-            ))}
+        <h6>Trusted partnerships across industries.</h6>
+        <ContentState resource={clients} />
+        {partners.length > 0 && (
+          <div className="client-marquee">
+            <div className="client-track">
+              {[...partners, ...partners].map((item, index) => (
+                <div className="client-item" key={item._id + "-" + index}>
+                  <a
+                    href={item.link || "/client"}
+                    target={item.link ? "_blank" : undefined}
+                    rel="noopener noreferrer"
+                  >
+                    <div className="client-img-wrapper">
+                      <img
+                        src={mediaUrl(item.image)}
+                        alt={item.title}
+                        className="client-img"
+                        loading="lazy"
+                      />
+                    </div>
+                  </a>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+        <Link to="/client">View all clients →</Link>
       </div>
       <div className="landing-certificate-section">
         <div className="landing-certificate-section-top">
           <div className="landing-certificate-section-text">
             <h1>Our Certificate</h1>
-            <h6>
-              As a legally established company, we hold official certifications
-              that demonstrate our commitment to compliance, credibility, and
-              professional standards in every aspect of our operations.
-            </h6>
+            <h6>Our commitment to credibility and professional standards.</h6>
           </div>
           <div className="landing-certificate-section-button">
-            <button onClick={handlePrev}>
-              <img src={left} alt="prev" />
+            <button
+              disabled={!certificates.data?.length}
+              onClick={() => scrollCertificates(-1)}
+              aria-label="Previous certificate"
+              aria-controls="certificate-track"
+            >
+              <img src={left} alt="" />
             </button>
-            <button onClick={handleNext}>
-              <img src={right} alt="next" />
+            <button
+              disabled={!certificates.data?.length}
+              onClick={() => scrollCertificates(1)}
+              aria-label="Next certificate"
+              aria-controls="certificate-track"
+            >
+              <img src={right} alt="" />
             </button>
           </div>
         </div>
+        <ContentState resource={certificates} />
         <div className="certificate-card-carousel">
           <div
             className="certificate-carousel-track"
+            id="certificate-track"
+            role="region"
+            aria-label="Company certificates"
+            tabIndex={0}
             ref={trackRef}
-            style={{
-              transform: getTransform(),
-              transition: isTransitioning
-                ? "transform 0.5s ease-in-out"
-                : "none",
-              width: `${(duplicatedImages.length * 100) / itemsPerPage}%`,
-            }}
           >
-            {duplicatedImages.map((img, idx) => (
-              <div className="certificate-img-wrapper" key={idx}>
+            {certificates.data?.map((item) => (
+              <a
+                className="certificate-img-wrapper"
+                key={item._id}
+                href={mediaUrl(item.image)}
+                target="_blank"
+                rel="noreferrer"
+                title={item.title}
+              >
                 <img
-                  src={img}
-                  alt={`sertif-${idx}`}
+                  src={mediaUrl(item.image)}
+                  alt={item.title}
                   className="certificate-img"
+                  loading="lazy"
                 />
-              </div>
+              </a>
             ))}
           </div>
         </div>
+        <Pagination
+          meta={certificates.meta}
+          page={certificatePage}
+          onChange={setCertificatePage}
+        />
       </div>
     </div>
   );
-};
-
-export default LandingSection;
+}

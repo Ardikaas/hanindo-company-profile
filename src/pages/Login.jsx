@@ -1,124 +1,80 @@
-import Footer from "../components/Footer/Footer";
-import Header from "../components/Header/Header";
-import "../style/Login.style.css";
-import vison from "../assets/vison-icon.png";
-import visoff from "../assets/visoff-icon.png";
-import logo from "../assets/FA_HBS_Logo.png";
 import { useState } from "react";
-import axios from "axios";
-import Cookies from "js-cookie";
-import { useNavigate } from "react-router-dom";
-
-const Login = () => {
-  const [showPassword, setShowPassword] = useState(false);
-  const [forgotText, setForgotText] = useState("Forgot Password?");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [statusMessage, setStatusMessage] = useState("");
-  const [loading, setLoading] = useState(false);
+import { useLocation, useNavigate } from "react-router-dom";
+import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
+import logo from "../assets/FA_HBS_Logo.png";
+import { api, session, errorMessage } from "../lib/api";
+import "../style/Login.style.css";
+export default function Login() {
+  const [visible, setVisible] = useState(false);
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
   const navigate = useNavigate();
-
-  const handleForgotClick = () => {
-    setForgotText("Forgot Password? (chat dika aja a feb)");
-  };
-
-  const checkServerBeforeLogin = async () => {
+  const location = useLocation();
+  async function submit(event) {
+    event.preventDefault();
+    setBusy(true);
+    setError("");
+    const form = new FormData(event.currentTarget);
     try {
-      const res = await axios.get("https://devlabfortirta.cloud/hanindo-api/");
-      return res.status === 200;
-    } catch (error) {
-      console.error("Server check failed:", error);
-      return false;
-    }
-  };
-
-  const handleLogin = async () => {
-    if (!username.trim() || !password.trim()) {
-      setStatusMessage("Username dan Password wajib diisi!");
-      return;
-    }
-
-    setLoading(true);
-    setStatusMessage("Mengecek server...");
-
-    const serverActive = await checkServerBeforeLogin();
-    if (!serverActive) {
-      setStatusMessage("Server tidak dapat dihubungi");
-      setForgotText("Forgot Password?");
-      setLoading(false);
-      return;
-    }
-
-    try {
-      setStatusMessage("Menghubungkan ke server...");
-      const response = await axios.post(
-        "https://devlabfortirta.cloud/hanindo-api/login",
-        {
-          user: username,
-          pass: password,
-        }
-      );
-
-      if (response.data.status?.code === 200) {
-        setStatusMessage("Login berhasil!");
-        Cookies.set("Beelzebub", "true", { expires: 25 / (24 * 60) });
-        navigate("/admin");
-      } else {
-        setStatusMessage("Login gagal: " + response.data.status?.message);
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      if (error.code === "ERR_NETWORK") {
-        setStatusMessage("Server tidak merespons atau sedang offline");
-        setForgotText("Telfon dika langsung a feb!!!");
-      } else {
-        setStatusMessage("Username atau Password salah!");
-        setForgotText("Forgot Password?");
-      }
+      const { data } = await api.post("/login", {
+        user: form.get("user"),
+        pass: form.get("pass"),
+      });
+      session.set(data.data.token);
+      const target = location.state?.from;
+      navigate(target?.startsWith("/admin") ? target : "/admin", {
+        replace: true,
+      });
+    } catch (err) {
+      setError(errorMessage(err));
     } finally {
-      setLoading(false);
+      setBusy(false);
     }
-  };
-
+  }
   return (
     <div>
       <Header />
-      <div className="login-container">
-        <div className="login-card">
-          <img src={logo} alt="logo-hanindo" />
-          {statusMessage && <h4>{statusMessage}</h4>}
-          <div className="login-card-user">
-            <h4>Username</h4>
+      <main className="login-container">
+        <form className="login-card" onSubmit={submit}>
+          <img src={logo} alt="Hanindo Bakti Sejahtera" />
+          <h1 style={{ fontSize: "1.4rem" }}>Admin workspace</h1>
+          <p>Masuk untuk mengelola website Hanindo.</p>
+          {error && <p role="alert">{error}</p>}
+          <label className="login-card-user">
+            Username
             <input
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+              name="user"
+              autoComplete="username"
+              required
+              maxLength={80}
             />
-          </div>
-          <div className="login-card-pass">
-            <h4>Password</h4>
+          </label>
+          <label className="login-card-pass">
+            Password
             <div className="login-card-pass-trick">
               <input
-                type={showPassword ? "text" : "password"}
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                name="pass"
+                type={visible ? "text" : "password"}
+                autoComplete="current-password"
+                required
+                maxLength={256}
               />
-              <button onClick={() => setShowPassword((prev) => !prev)}>
-                <img src={showPassword ? vison : visoff} alt="hint" />
+              <button
+                type="button"
+                onClick={() => setVisible(!visible)}
+                aria-label={
+                  visible ? "Sembunyikan password" : "Tampilkan password"
+                }
+              >
+                {visible ? "Hide" : "Show"}
               </button>
             </div>
-            <button type="button" onClick={handleForgotClick}>
-              {forgotText}
-            </button>
-          </div>
-          <button onClick={handleLogin}>Login</button>
-        </div>
-      </div>
+          </label>
+          <button disabled={busy}>{busy ? "Memproses…" : "Masuk"}</button>
+        </form>
+      </main>
       <Footer />
     </div>
   );
-};
-
-export default Login;
+}

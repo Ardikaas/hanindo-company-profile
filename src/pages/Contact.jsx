@@ -4,7 +4,7 @@ import phone from "../assets/phone-icon.png";
 import mail from "../assets/mail-icon.png";
 import pin from "../assets/pin-icon.png";
 import { useState } from "react";
-import axios from "axios";
+import { api, errorMessage } from "../lib/api";
 import "../style/Contact.style.css";
 
 const Contact = () => {
@@ -37,17 +37,14 @@ const Contact = () => {
     setIsSending(true);
 
     try {
-      const res = await axios.post(
-        "https://devlabfortirta.cloud/hanindo-api/mail",
-        {
-          first_name: userFirstName,
-          last_name: userLastName,
-          email: userEmail,
-          phone: userPhone,
-          subject: subject,
-          message: message,
-        }
-      );
+      const res = await api.post("/mail", {
+        first_name: userFirstName,
+        last_name: userLastName,
+        email: userEmail,
+        phone: userPhone,
+        subject: subject,
+        message: message,
+      });
 
       if (res.data.status?.code === 200) {
         setStatusMessage("Message sent successfully!");
@@ -62,8 +59,7 @@ const Contact = () => {
       }
     } catch (error) {
       console.error(error);
-      setStatusMessage("Failed to send message. Please try again.");
-      alert("Server tidak dapat dihubungi. Pastikan koneksi internet stabil.");
+      setStatusMessage(errorMessage(error));
     } finally {
       setIsSending(false);
       setTimeout(() => setStatusMessage(""), 5000);
@@ -164,8 +160,8 @@ const Contact = () => {
             {isSending
               ? "Sending..."
               : statusMessage
-              ? statusMessage
-              : "Send Message"}
+                ? statusMessage
+                : "Send Message"}
           </button>
         </div>
       </div>

@@ -1,17 +1,88 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
-
-html, body{
-  overflow-x: hidden;
+:root {
+  /* Bound both type and reading width on ultra-wide/8K displays. */
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(16px, 0.78vw, 20px);
+  color: #3c3c3b;
+  --content-width: 90rem;
+  --gutter: clamp(1rem, 4vw, 5rem);
+  --page-inset: max(var(--gutter), calc((100% - var(--content-width)) / 2));
+  --section-space: clamp(2.5rem, 5vw, 5rem);
+  --header-height: 5.5rem;
+  --gap: clamp(1rem, 2vw, 2rem);
 }
-
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-padding-top: calc(var(--header-height) + 1rem);
+}
 body {
   margin: 0;
-  background-color: #ffffff;
+  background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-h1, h2, h3, h4, h5, h6 {
+#root > div {
+  /* One shared offset keeps every route clear of the fixed navigation. */
+  min-height: 100vh;
+  min-height: 100svh;
+  padding-top: var(--header-height);
+  display: flex;
+  flex-direction: column;
+}
+div {
+  min-width: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
-  color: 121212;
+  overflow-wrap: anywhere;
+}
+h1, h2, h3 {
+  line-height: 1.25;
+}
+h4, h5, h6, p {
+  line-height: 1.65;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  overflow-wrap: anywhere;
+}
+button, input, textarea {
+  font: inherit;
+  max-width: 100%;
+  min-width: 0;
+}
+button {
+  cursor: pointer;
+  overflow-wrap: anywhere;
+}
+button, input {
+  min-height: 2.75rem;
+}
+input, textarea {
+  font-size: 1rem;
+}
+button:disabled {
+  cursor: default;
+  opacity: .65;
+}
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid #d3a24a;
+  outline-offset: 3px;
+}
+@media (max-width: 960px) {
+  :root {
+    --header-height: 4.5rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
 }

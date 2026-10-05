@@ -1,210 +1,96 @@
-.contact-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 150px;
-  padding: 50px 90px;
-  margin-top: 85px;
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(2rem, 6vw, 6rem);
+  padding: var(--section-space) var(--page-inset);
 }
-
-.contact-text{
+.contact-text {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
-
-.contact-text > h1{
-  font-family: "Plus Jakarta Sans", sans-serif;
+.contact-text > h1 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
   font-weight: 600;
-  color: #3c3c3b;
-  font-size: 2rem;
 }
-
-.contact-text > h4{
-  font-family: "Plus Jakarta Sans", sans-serif;
+.contact-text > h4 {
+  max-width: 55ch;
+  font-size: 1rem;
   font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  max-width: 500px;
-  width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: .5rem;
 }
-
-.contact-item{
+.contact-item {
   display: flex;
-  flex-direction: row;
-  gap: 15px;
-  margin-bottom: 10px;
+  gap: 1rem;
+  align-items: flex-start;
 }
-
-.contact-item > img{
-  width: 25px;
-  height: 25px;
+.contact-item > img {
+  width: 1.5rem;
+  height: 1.5rem;
+  flex-shrink: 0;
+  margin-top: .2rem;
 }
-
-.contact-item > h4{
-  font-family: "Plus Jakarta Sans", sans-serif;
+.contact-item > h4 {
+  font-size: 1rem;
   font-weight: 600;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  max-width: 250px;
-  width: 100%;
 }
-
-.contact-form{
+.contact-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 500px;
+  gap: .65rem;
   width: 100%;
+  max-width: 40rem;
 }
-
-.contact-form-name{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
+.contact-form-name {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
 }
-
-.contact-form-name > input{
-  padding: 10px;
-  border-radius: 3px;
-  border: 1px solid #3c3c3b;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  max-width: 500px;
-  width: 100%;
-}
-
-.contact-form-name > input:focus{
-  outline: none;
-  border: 1px solid #3c3c3b;
-}
-
-.contact-form > h4{
-  font-family: "Plus Jakarta Sans", sans-serif;
+.contact-form > h4 {
+  font-size: 1rem;
   font-weight: 600;
+}
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: .75rem;
+  border: 1px solid #606768;
+  border-radius: .25rem;
   color: #3c3c3b;
-  font-size: 0.9rem;
+  background: #fff;
 }
-
-.contact-form > input{
-  padding: 10px;
-  border-radius: 3px;
-  border: 1px solid #3c3c3b;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
+.contact-form textarea {
+  min-height: 10rem;
+  resize: vertical;
 }
-
-.contact-form > input:focus{
-  outline: none;
-  border: 1px solid #3c3c3b;
+.contact-form > button {
+  align-self: flex-start;
+  padding: .75rem 1.5rem;
+  margin-top: .75rem;
+  border: 1px solid #2550a4;
+  border-radius: .25rem;
+  color: #fff;
+  background: #2550a4;
+  font-weight: 600;
 }
-
-.contact-form > textarea{
-  padding: 10px;
-  border-radius: 3px;
-  border: 1px solid #3c3c3b;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  height: 150px;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  resize: none;
-}
-
-.contact-form > textarea:focus{
-  outline: none;
-  border: 1px solid #3c3c3b;
-}
-
-.contact-form > button{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
-  margin-top: 20px;
-  padding: 10px 25px;
-  border-radius: 3px;
-  color: #ffffff;
-  font-size: 0.9rem;
-  background-color: #2550A4;
-  transition: 0.3s ease-in;
-  text-decoration: none;
-  width: fit-content
-}
-
-button.success {
-  background-color: #25a43c;
-  color: #ffffff;
-  transition: 0.3s ease-in-out;
-}
-
-button.error {
-  background-color: #a42525;
-  color: #ffffff;
-  transition: 0.3s ease-in-out;
-}
-
-button.sending {
-  background-color: #9ca425;
-  color: #ffffff;
-  transition: 0.3s ease-in-out;
-}
-
 .contact-form > button:hover {
-  background-color: #3c3c3b;
+  background: #3c3c3b;
 }
-
-@media (max-width: 1080px) {
-  .contact-container{
-    gap: 80px;
-  }
+.contact-form > button.success {
+  background: #25803a;
 }
-
+.contact-form > button.error {
+  background: #a42525;
+}
+.contact-form > button.sending {
+  background: #696d19;
+}
 @media (max-width: 768px) {
-  .contact-container{
-    flex-direction: column-reverse;
+  .contact-container {
+    grid-template-columns: minmax(0, 1fr);
   }
-  .contact-container{
-    padding: 50px 50px;
-  }
-
-  .contact-text > h1{
-    font-size: 1.8rem;
-  }
-  
-  .contact-text > h4{
-    font-size: 0.7rem;
-  }
-
-  .contact-form > h4{
-    font-size: 0.9rem;
-  }
-  .contact-form-name > input{
-    font-size: 0.7rem;
-  }
-  .contact-form > input{
-    font-size: 0.7rem;
-  }
-  .contact-form > textarea{
-    height: 150px;
-    font-size: 0.7rem;
-  }
-  .contact-form > button{
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 10px 20px;
-  }
-  .contact-item > img{
-    width: 20px;
-    height: 20px;
-  }
-  
-  .contact-item > h4{
-    font-size: 0.7rem;
-    max-width: 180px;
-    width: 100%;
+}
+@media (max-width: 400px) {
+  .contact-form-name {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

@@ -1,0 +1,128 @@
+.content-state {
+  padding: 2rem 1rem;
+  color: #6a7789;
+  text-align: center;
+}
+.content-state button {
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: #fff;
+  border: 1px solid #d8e1ec;
+  border-radius: 0.4rem;
+  color: #244e93;
+}
+.auth-state {
+  padding: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 1.5rem;
+}
+.pagination button {
+  padding: 0.6rem 0.9rem;
+  background: #fff;
+  border: 1px solid #d8e1ec;
+  border-radius: 0.4rem;
+  color: #244e93;
+}
+.pagination span {
+  font-size: 0.8rem;
+  color: #6a7789;
+}
+.public-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.portfolio-container,
+.public-detail {
+  padding: var(--section-space) var(--page-inset);
+}
+.portfolio-container > h1,
+.public-detail > h1 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  margin-block: 0.75rem 1rem;
+}
+.portfolio-container > p {
+  margin-bottom: 2rem;
+}
+.portfolio-card {
+  border: 1px solid #dfe0df;
+  border-radius: 0.625rem;
+  overflow: hidden;
+}
+.portfolio-card > img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+.portfolio-card > div {
+  padding: 1.5rem;
+}
+.portfolio-card h2 {
+  margin-block: 0.5rem 1rem;
+  font-size: 1.5rem;
+}
+.portfolio-card p {
+  white-space: pre-wrap;
+}
+.public-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  color: #2550a4;
+}
+.public-detail > img {
+  width: min(100%, 50rem);
+  max-height: 36rem;
+  object-fit: contain;
+  margin-block: 1rem 2rem;
+}
+.public-detail > p {
+  max-width: 75ch;
+  white-space: pre-wrap;
+  margin-bottom: 2rem;
+}
+.public-cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: #2550a4;
+  color: #fff;
+  border-radius: 0.3rem;
+  text-decoration: none;
+}
+.summary-text {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.service-card-bottom-text > h6,
+.client-card-right > h6 {
+  white-space: pre-wrap;
+}
+.login-card p {
+  font-size: 0.875rem;
+  color: #6a7789;
+}
+.login-card label {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.login-card-pass-trick > button {
+  flex-basis: 3.5rem;
+  font-size: 0.75rem;
+  color: #2550a4;
+}
+@media (max-width: 700px) {
+  .public-content-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

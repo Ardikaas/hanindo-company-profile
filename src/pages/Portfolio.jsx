@@ -5,28 +5,29 @@ import ContentState from "../components/ContentState";
 import Pagination from "../components/Pagination";
 import useResource from "../hooks/useResource";
 import { mediaUrl } from "../lib/api";
-import "../style/Client.style.css";
-export default function Clients() {
+export default function Portfolio() {
   const [page, setPage] = useState(1);
-  const resource = useResource("/content/client?page=" + page);
+  const resource = useResource("/content/portfolio?page=" + page);
   return (
     <div>
       <Header />
-      <main className="clients-container">
-        <h1>Who We Work With</h1>
+      <main className="portfolio-container">
+        <p className="public-eyebrow">OUR EXPERIENCE</p>
+        <h1>Projects & Portfolio</h1>
+        <p>Engineering solutions, delivered with care and precision.</p>
         <ContentState resource={resource} />
         <div className="public-content-grid">
           {resource.data?.map((item) => (
-            <article className="client-card" key={item._id}>
+            <article className="portfolio-card" key={item._id}>
               <img src={mediaUrl(item.image)} alt={item.title} loading="lazy" />
-              <div className="client-card-right">
-                <h1>{item.title}</h1>
-                <h6>{item.description}</h6>
-                {item.link && (
-                  <a href={item.link} target="_blank" rel="noopener noreferrer">
-                    Visit website ↗
-                  </a>
-                )}
+              <div>
+                <p className="public-eyebrow">
+                  {[item.category, item.location, item.year]
+                    .filter(Boolean)
+                    .join(" · ")}
+                </p>
+                <h2>{item.title}</h2>
+                <p>{item.description}</p>
               </div>
             </article>
           ))}

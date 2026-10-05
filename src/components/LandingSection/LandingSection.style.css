@@ -1,771 +1,342 @@
 .landing-container {
-  margin-top:95px;
   display: flex;
   flex-direction: column;
 }
-
 .landing-overview-section {
-  display: flex;
-  flex-direction: row;
-  background-color: #3c3c3b;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding-inline: var(--page-inset);
+  background: #3c3c3b;
+  color: #fff;
 }
-
-.landing-overview-section-text{
+.landing-overview-section-text {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 80px 50px;
+  justify-content: center;
+  gap: 2rem;
+  padding: var(--section-space) clamp(1rem, 4vw, 4rem) var(--section-space) 0;
 }
-
 .landing-overview-section-text > h1 {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(2rem, 3vw, 3.5rem);
   font-weight: 800;
-  color: #ffffff;
-  width: 100%;
-  max-width: 500px;
-  font-size: 2.5rem;
+  max-width: 20ch;
 }
-
+.landing-overview-section-text-bridge {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
 .landing-overview-section-text-bridge > h4 {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #ffffff;
   font-size: 1.1rem;
-}
-
-.landing-overview-section-text-bridge{
-  display: flex;
-  flex-direction: column;
-  align-items: normal;
-  gap: 20px;
-}
-
-.landing-overview-section-text-bridge > a {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 800;
-  margin-top: 20px;
-  padding: 10px 25px;
-  border-radius: 5px;
-  color: #ffffff;
-  font-size: 1.1rem;
-  background-color: #2550A4;
-  border: 1px solid #2550A4;
-  transition: 0.3s ease-in;
-  text-decoration: none;
-  width: fit-content
-}
-
-.landing-overview-section-text-bridge > a:hover {
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
-  color: #3c3c3b;
-  cursor: pointer;
-}
-
-.landing-overview-section > img{
-  width: 100%;
-  max-width: 665px;
-  height: auto;
-}
-
-.landing-service-section{
-  display: flex;
-  flex-direction: column;
-  padding: 50px 90px;
-  background-color: #F4F4F3;
-}
-
-.landing-service-section > h4{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #3c3c3b;
-  font-size: 2.5rem;
-}
-
-.landing-service-section > h6{
-  margin-top: 10px;
-  margin-bottom: 50px;
-  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
-  width: 550px;
-  color: #3c3c3b;
-  font-size: 0.9rem;
+  max-width: 55ch;
 }
-
-.landing-service-section-card{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.landing-service-section-card-item-column{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-
-.landing-service-section-card-item{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: 1px solid #DFE0DF;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 300px;
-  width: auto;
-  transition: ease-in 0.3s;
-}
-
-.landing-service-section-card-item > img{
-  width: 25px;
-  height: auto;
-  background-color: #ffffff;
-  border-radius: 50%;
-  padding: 13px;  
-}
-
-.landing-service-section-card-item > h4{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #3c3c3b;
-  font-size: 1.5rem;
-}
-
-.landing-service-section-card-item > h6{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-}
-
-.landing-service-section-card-item > a{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #2550A4;
-}
-
-.landing-service-section-card-item:hover{
-  background-color: #3c3c3b;
-}
-
-.landing-service-section-card-item:hover > h4{
-  color: #ffffff;
-}
-
-.landing-service-section-card-item:hover > h6{
-  color: #ffffff;
-}
-
-.landing-service-section-card-item:hover > a{
-  color: #D3A24A;
-}
-
-.landing-service-section-card-item-link{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: 1px solid #DFE0DF;
-  border-radius: 10px;
-  padding: 20px;
-  max-width: 300px;
-  width: auto;
-  transition: ease-in 0.3s;
-  background-color: #2550A4;
-  text-decoration: none;
-}
-
-.landing-service-section-card-item-link > img{
-  width: 25px;
-  height: auto;
-  background-color: #ffffff;
-  border-radius: 50%;
-  padding: 13px;  
-}
-
-.landing-service-section-card-item-link > h4{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #ffffff;
-  font-size: 1.5rem;
-}
-
-.landing-service-section-card-item-link > h6{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #ffffff;
-  font-size: 0.9rem;
-}
-
-.landing-service-section-card-item-link:hover{
-  background-color: #F4F4F3;
-  border: 1px solid #2550A4;
-}
-
-.landing-service-section-card-item-link:hover > h4{
-  color: #2550A4;
-}
-.landing-service-section-card-item-link:hover > h6{
-  color: #3c3c3b;
-}
-
-.landing-about-section{
-  display: flex;
-  flex-direction: column;
-  padding: 50px 90px;
-}
-
-.landing-about-section-top{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-
-.landing-about-section-top-text > h4{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #3c3c3b;
-  font-size: 2.5rem;
-}
-
-.landing-about-section-top-text > h6{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  margin-top: 10px;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  width: 565px;
-}
-
-.landing-about-section-top > a{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  padding: 10px 25px;
-  border-radius: 5px;
-  color: #ffffff;
-  font-size: 1.1rem;
-  background-color: #2550A4;
-  transition: 0.3s ease-in;
-  text-decoration: none;
-}
-
-.landing-about-section-top > a:hover{
-  background-color: #3c3c3b;
-}
-
-.landing-about-section-bottom{
-  display: flex;
-  flex-direction: row;
-  gap: 80px;
-}
-
-.landing-about-section-bottom > img{
-  width: 100%;
-  max-width: 450px;
-}
-
-.landing-about-section-bottom-text{
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.landing-about-section-bottom-vision{
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #F4F4F3;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #dfe0df;
-}
-
-.landing-about-section-bottom-vision > h1{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #3c3c3b;
-  font-size: 2rem;
-}
-
-.landing-about-section-bottom-vision > h6{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-}
-
-.landing-about-section-bottom-vision > h6 > a{
-  color: #3c3c3b;
-  text-decoration: none;
-  padding-left: 5px;
-  font-weight: 600;
-}
-
-.landing-about-section-bottom-text > a{
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #dfe0df;
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #3c3c3b;
-  font-size: 2rem;
-  text-decoration: none;
-}
-
-.landing-certificate-section{
-  display: flex;
-  flex-direction: column;
-  padding: 50px 90px;
-}
-
-.landing-certificate-section-top{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 50px;
-}
-
-.landing-certificate-section-text > h1{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #3c3c3b;
-  font-size: 2.5rem;
-}
-
-.landing-certificate-section-text > h6{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  width: 550px;
-  margin-top: 10px;
-}
-
-.landing-certificate-section-button{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-}
-
-.landing-certificate-section-button > button{
-  padding: 10px 10px;
-  background-color: #2550A4;
-  border: none;
-  transition: 0.3s ease-in-out;
-}
-
-.landing-certificate-section-button > img{
-  width: 25px;
-  height: 25px;
-}
-
-.landing-certificate-section-button > button:hover{
-  background-color: #3c3c3b;
-}
-
-.certificate-card-carousel {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-  width: 100%;
-}
-
-.certificate-carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: max-content;
-}
-
-.certificate-img-wrapper {
-  flex: 0 0 calc(100% / 3);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 5px;
-  box-sizing: border-box;
-}
-
-.certificate-img{
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-  border: 1px solid #3c3c3b;
-  object-fit: contain;
-}
-
-.landing-client-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px 0px;
-  background-color: #F4F4F3;
-}
-
-.landing-client-section > h1{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 600;
-  color: #3c3c3b;
-  font-size: 2.5rem;
-}
-
-.landing-client-section > h6{
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-weight: 400;
-  color: #3c3c3b;
-  font-size: 0.9rem;
-  width: 600px;
-  margin-top: 10px;
-  margin-bottom: 50px;
-  text-align: center;
-}
-
-.client-card-carousel {
-  display: flex;
-  flex-direction: row;
+.landing-overview-section-text-bridge > a,
+.landing-about-section-top > a {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  color: #fff;
+  background: #2550a4;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
 }
-
+.landing-overview-section-text-bridge > a:hover {
+  background: #fff;
+  color: #3c3c3b;
+}
+.landing-overview-section > img {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  object-fit: cover;
+}
+.landing-service-section,
+.landing-about-section,
+.landing-client-section,
+.landing-certificate-section {
+  padding: var(--section-space) var(--page-inset);
+}
+.landing-service-section,
+.landing-client-section {
+  background: #f4f4f3;
+}
+.landing-service-section > h4,
+.landing-about-section-top-text > h4,
+.landing-client-section > h1,
+.landing-certificate-section-text > h1 {
+  font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+  font-weight: 600;
+}
+.landing-service-section > h6,
+.landing-about-section-top-text > h6,
+.landing-client-section > h6,
+.landing-certificate-section-text > h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  max-width: 65ch;
+  margin-top: 0.75rem;
+}
+.landing-service-section > h6 {
+  margin-bottom: 2rem;
+}
+.landing-service-section-card {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap);
+}
+.landing-service-section-card-item-column {
+  display: contents;
+}
+.landing-service-section-card-item,
+.landing-service-section-card-item-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: clamp(1rem, 2vw, 1.75rem);
+  border: 1px solid #dfe0df;
+  border-radius: 0.625rem;
+  transition: background 0.2s;
+}
+.landing-service-section-card-item > img,
+.landing-service-section-card-item-link > img {
+  width: 3.25rem;
+  height: 3.25rem;
+  padding: 0.8rem;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 50%;
+}
+.landing-service-section-card-item > h4,
+.landing-service-section-card-item-link > h4 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.landing-service-section-card-item > h6,
+.landing-service-section-card-item-link > h6 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+.landing-service-section-card-item > a {
+  color: #2550a4;
+  font-weight: 600;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  min-height: 2.75rem;
+}
+.landing-service-section-card-item:hover {
+  background: #3c3c3b;
+  color: #fff;
+}
+.landing-service-section-card-item:hover > a {
+  color: #d3a24a;
+}
+.landing-service-section-card-item-link {
+  color: #fff;
+  background: #2550a4;
+  text-decoration: none;
+}
+.landing-service-section-card-item-link:hover {
+  background: #3c3c3b;
+}
+.landing-about-section-top,
+.landing-certificate-section-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+.landing-about-section-top > a {
+  flex-shrink: 0;
+  align-self: center;
+}
+.landing-about-section-bottom {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+.landing-about-section-bottom > img {
+  width: 100%;
+  max-width: 32rem;
+  justify-self: center;
+}
+.landing-about-section-bottom-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.landing-about-section-bottom-vision,
+.landing-about-section-bottom-text > a {
+  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid #dfe0df;
+  border-radius: 0.625rem;
+}
+.landing-about-section-bottom-vision {
+  background: #f4f4f3;
+}
+.landing-about-section-bottom-vision > h1,
+.landing-about-section-bottom-text > a {
+  font-size: clamp(1.5rem, 2vw, 2rem);
+  font-weight: 600;
+  color: #3c3c3b;
+  text-decoration: none;
+}
+.landing-about-section-bottom-vision > h6 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0.75rem;
+}
+.landing-about-section-bottom-vision > h6 > a {
+  color: inherit;
+  padding-left: 0.3rem;
+  font-weight: 600;
+}
+.landing-client-section {
+  text-align: center;
+}
+.landing-client-section > h6 {
+  margin-inline: auto;
+  margin-bottom: 2rem;
+}
 .client-marquee {
   overflow: hidden;
   width: 100%;
-  position: relative;
 }
-
 .client-track {
   display: flex;
   width: max-content;
   animation: scroll-left 60s linear infinite;
 }
-
+.client-marquee:hover .client-track,
+.client-marquee:focus-within .client-track {
+  animation-play-state: paused;
+}
 .client-item {
-  flex: 0 0 auto;
-  padding-right: 40px;
+  flex: 0 0 12rem;
+  padding: 0.5rem 1rem;
 }
-
 .client-img-wrapper {
-  width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  height: 7rem;
 }
-
 .client-img {
   width: 100%;
-  max-width: 150px;
-  height: auto;
-  border-radius: 10px;
+  max-width: 10rem;
+  max-height: 7rem;
   object-fit: contain;
+  border-radius: 0.625rem;
 }
-
 @keyframes scroll-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
-
-@media (max-width: 1280px) {
-  .landing-overview-section > img{
-    max-width: 600px;
-    width: auto;
+.landing-certificate-section-button {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.landing-certificate-section-button > button {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0.65rem;
+  background: #2550a4;
+  border: 0;
+  border-radius: 0.25rem;
+}
+.landing-certificate-section-button > button:hover {
+  background: #3c3c3b;
+}
+.landing-certificate-section-button img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+}
+.certificate-card-carousel {
+  width: 100%;
+}
+.certificate-carousel-track {
+  --certificate-columns: 3;
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 0;
+  overscroll-behavior-x: contain;
+  padding-block: 0.25rem 1rem;
+}
+.certificate-img-wrapper {
+  aspect-ratio: 3 / 4;
+  flex: 0 0
+    calc(
+      (100% - (var(--certificate-columns) - 1) * 1rem) /
+        var(--certificate-columns)
+    );
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scroll-snap-align: start;
+}
+.certificate-img {
+  width: 100%;
+  height: 100%;
+  max-height: 36rem;
+  object-fit: contain;
+}
+@media (max-width: 1100px) {
+  .landing-service-section-card {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
-
-@media (max-width: 1080px) {
-  .landing-overview-section > img{
-    max-width: 500px;
-    width: auto;
+@media (max-width: 768px) {
+  .landing-overview-section {
+    grid-template-columns: minmax(0, 1fr);
   }
-  .landing-overview-section-text > h1 {
-    font-size: 2rem;
+  .landing-overview-section-text {
+    padding-right: 0;
   }
-  
-  .landing-overview-section-text-bridge > h4 {
-    font-size: 1rem;
+  .landing-overview-section > img {
+    height: auto;
+    max-height: 28rem;
+  }
+  .landing-about-section-top,
+  .landing-certificate-section-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+  }
+  .landing-about-section-top > a {
+    align-self: flex-start;
+  }
+  .landing-about-section-bottom {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .certificate-carousel-track {
+    --certificate-columns: 2;
   }
 }
-
-@media (max-width: 960px) {
-  .landing-container {
-    margin-top:75px;
+@media (max-width: 520px) {
+  .landing-service-section-card {
+    grid-template-columns: minmax(0, 1fr);
   }
-  .landing-overview-section > img{
-    max-width: 500px;
-    width: auto;
-  }
-  .landing-overview-section-text > h1 {
-    font-size: 1.8rem;
-  }
-  
-  .landing-overview-section-text-bridge > h4 {
-    font-size: 0.8rem;
-  }
-  .landing-service-section-card-item-column{
-    flex-direction: column;
-    gap: 20px;
-  }
-  .landing-about-section-bottom{
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  } 
-  .landing-about-section-top-text{
-    margin-bottom: 25px;
+  .certificate-carousel-track {
+    --certificate-columns: 1;
   }
 }
-
-@media (max-width: 768px){
-  .landing-overview-section > img{
-    max-width: 380px;
-    width: auto;
-  }
-  .landing-overview-section-text > h1 {
-    font-size: 1.5rem;
-  }
-  .landing-overview-section-text-bridge > h4 {
-    font-size: 0.7rem;
-    width: 300px;
-  }
-  .landing-overview-section-text-bridge > a {
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 0.6rem;
-    margin-top: 0px;
-  }
-  .landing-service-section{
-    padding: 50px 50px;
-  }
-  .landing-service-section > h4{
-    font-size: 2rem;
-  }
-  .landing-service-section > h6{
-    max-width: 450px;
-    width: 100%;
-    font-size: 0.7rem;
-  }
-  .landing-service-section-card{
-    flex-direction: column;
-  }
-  .landing-service-section-card-item-column{
-    flex-direction: row;
-  }
-  .landing-service-section-card-item{
-    max-width: 250px;
-  }
-  .landing-service-section-card-item > img{
-    width: 20px;
-    padding: 10px;  
-  }
-  .landing-service-section-card-item > h4{
-    font-size: 1.3rem;
-  }
-  .landing-service-section-card-item > h6{
-    font-size: 0.7rem;
-  }
-  .landing-service-section-card-item > a{
-    font-size: 0.7rem;
-  }
-  .landing-service-section-card-item-link{
-    max-width: 250px;
-  }
-  .landing-service-section-card-item-link > img{
-    width: 20px;
-    padding: 10px;  
-  }
-  .landing-service-section-card-item-link > h4{
-    font-size: 1.3rem;
-  }
-  .landing-service-section-card-item-link > h6{
-    font-size: 0.7rem;
-  }
-  .landing-about-section{
-    padding: 50px 50px;
-  }
-  .landing-about-section-top{
-    flex-direction: column;
-    align-items: normal;
-    margin-bottom: 25px;
-  }
-  .landing-about-section-top-text > h4{
-    font-size: 2rem;
-  }
-  .landing-about-section-top-text > h6{
-    font-size: 0.7rem;
-    max-width: 450px;
-    width: 100%;
-  }
-  .landing-about-section-top > a{
-    font-size: 0.7rem;
-    width: fit-content;
-  }
-  .landing-about-section-bottom-vision > h1{
-    font-size: 1.5rem;
-  }
-  .landing-about-section-bottom-vision > h6{
-    font-size: 0.7rem;
-  }
-  .landing-about-section-bottom-text > a{
-    font-size: 1.5rem;
-  }
-  .landing-client-section > h1{
-    font-size: 2rem;
-  }
-  .landing-client-section > h6{
-    font-size: 0.7rem;
-    max-width: 500px;
-    width: 100%;
-  }
-  .client-img {
-    width: 100%;
-    max-width: 125px;
-  }
-  .landing-certificate-section{
-    padding: 50px 50px;
-  }
-  .landing-certificate-section-top{
-    flex-direction: column;
-    align-items: normal;
-    margin-bottom: 50px;
-  }
-  .landing-certificate-section-text > h1{
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 600;
-    color: #3c3c3b;
-    font-size: 2rem;
-  }
-  .landing-certificate-section-text > h6{
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 400;
-    color: #3c3c3b;
-    font-size: 0.7rem;
-    max-width: 400px;
-    width: 100%;
-  }
-  .landing-certificate-section-button{
-    gap: 15px;
-    margin-top: 20px;
-  }
-  .landing-certificate-section-button > button{
-    padding: 7px 7px;
-  }
-  .certificate-img-wrapper {
-    flex: 0 0 calc(100% / 2);
-  }
-}
-
-
-@media (max-width: 480px){
-  .landing-overview-section{
-    flex-direction: column-reverse;
-    align-items: center;
-  }
-  .landing-overview-section > img{
-    max-width: 100vw;
-    width: auto;
-  }
-  
-  .landing-overview-section-text{
-    padding: 25px 35px;
-  }
-  .landing-overview-section-text > h1 {
-    font-size: 1.5rem;
-  }
-  .landing-overview-section-text-bridge > h4 {
-    font-size: 0.7rem;
-    margin-top: 50px;
-    width: 300px;
-  }
-  .landing-overview-section-text-bridge > a {
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 0.6rem;
-    margin-top: 0px;
-  }
-  .landing-service-section > h4{
-    font-size: 1.8rem;
-  }
-  .landing-service-section > h6{
-    max-width: 450px;
-    width: 100%;
-    font-size: 0.7rem;
-  }
-  .landing-service-section-card{
-    flex-direction: column;
-  }
-  .landing-service-section-card-item-column{
-    flex-direction: column;
-  }
-  .landing-service-section-card-item{
-    max-width: 300px;
-  }
-  .landing-service-section-card-item > img{
-    width: 20px;
-    padding: 10px;  
-  }
-  .landing-service-section-card-item > h4{
-    font-size: 1.2rem;
-    width: 100%;
-    max-width: 250px;
-  }
-  .landing-service-section-card-item > h6{
-    width: 100%;
-    max-width: 250px;
-    font-size: 0.7rem;
-  }
-  .landing-service-section-card-item > a{
-    font-size: 0.7rem;
-  }
-  .landing-service-section-card-item-link{
-    max-width: 300px;
-  }
-  .landing-service-section-card-item-link > h4{
-    font-size: 1.2rem;
-    width: 100%;
-    max-width: 250px;
-  }
-  .landing-service-section-card-item-link > h6{
-    width: 100%;
-    max-width: 250px;
-    font-size: 0.7rem;
-  }
-  .landing-about-section-top-text > h4{
-    font-size: 1.8rem;
-  }
-  .landing-about-section-top-text > h6{
-    font-size: 0.7rem;
-  }
-  .landing-about-section-top > a{
-    font-size: 0.7rem;
-  }
-  .landing-about-section-bottom-vision > h1{
-    font-size: 1.5rem;
-  }
-  .landing-about-section-bottom-vision > h6{
-    font-size: 0.7rem;
-  }
-  .landing-about-section-bottom-text > a{
-    font-size: 1.5rem;
-  }
-  .landing-client-section > h1{
-    font-size: 1.8rem;
-  }
-  .landing-client-section > h6{
-    font-size: 0.7rem;
-    max-width: 380px;
-    width: 100%;
-  }
-  .certificate-img-wrapper {
-    flex: 0 0 calc(100% / 1);
+@media (prefers-reduced-motion: reduce) {
+  .client-marquee {
+    overflow-x: auto;
   }
 }
