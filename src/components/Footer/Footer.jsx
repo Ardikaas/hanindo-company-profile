@@ -3,6 +3,7 @@ import arrow from "../../assets/arrow-right-icon.png";
 import phone from "../../assets/phone-icon.png";
 import mail from "../../assets/mail-icon.png";
 import "./Footer.style.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -32,28 +33,28 @@ const Footer = () => {
         </h4>
         <div className="footer-center-center">
           <div className="footer-cc-li">
-            <a href="/about">
+            <Link to="/about">
               <img src={arrow} alt="" />
               <h4>About</h4>
-            </a>
-            <a href="/services">
+            </Link>
+            <Link to="/services">
               <img src={arrow} alt="" />
               <h4>Services</h4>
-            </a>
+            </Link>
           </div>
           <div className="footer-cc-li">
-            <a href="/client">
+            <Link to="/client">
               <img src={arrow} alt="" />
               <h4>Client</h4>
-            </a>
-            <a href="/portfolio">
+            </Link>
+            <Link to="/portfolio">
               <img src={arrow} alt="" />
               <h4>Portfolio</h4>
-            </a>
-            <a href="/contact">
+            </Link>
+            <Link to="/contact">
               <img src={arrow} alt="" />
               <h4>Contact</h4>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="footer-center-right">
@@ -63,21 +64,21 @@ const Footer = () => {
             Banten, 42436
           </h4>
           <h4>Phone: 0813-1996-7235</h4>
-          <a
-            href="https://drive.google.com/file/d/1ngO9jx8NL9hWyiek0fVNH8aP6KJfIPIM/view?usp=drive_link"
+          <Link
+            to="https://drive.google.com/file/d/1ngO9jx8NL9hWyiek0fVNH8aP6KJfIPIM/view?usp=drive_link"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src={download} alt="download-icon" />
             <h4>Download Company Profile</h4>
-          </a>
+          </Link>
         </div>
       </div>
       <div className="footer-bottom">
         <h4>
           Copyright © 2025 PT Hanindo Bakti Sejahtera. All Right Reserved.
         </h4>
-        <a href="/admin">admin</a>
+        <Link to="/admin">admin</Link>
       </div>
     </div>
   );

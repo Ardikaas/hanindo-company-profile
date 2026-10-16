@@ -9,6 +9,99 @@ import next from "../../assets/next-icon.png";
 import right from "../../assets/right-icon.png";
 import left from "../../assets/left-icon.png";
 import "./LandingSection.style.css";
+
+const defaultHome = {
+  title: "Delivering Engineering Integrity, Empowering Industrial Progress.",
+  description:
+    "We specialize in plastic engineering solutions, construction services, and industrial support. From liner installations for hoppers and silos to comprehensive building maintenance, we deliver sustainable solutions with a commitment to quality, safety, and long-term partnership.",
+  image: "asset:wallpaper.png",
+};
+
+const defaultServices = [
+  {
+    _id: "liner-fabrication-and-installation",
+    title: "Liner Fabrication & Installation",
+    description:
+      "Fabrication and installation of protective liners on surfaces like hoppers, silos, and dump trucks to prevent wear and corrosion.",
+    icon: "asset:phabricator-icon.png",
+  },
+  {
+    _id: "industrial-equipment-supply",
+    title: "Industrial Equipment Supply",
+    description:
+      "Efficient and precise supply of various industrial tools and equipment based on project needs.",
+    icon: "asset:boxes-icon.png",
+  },
+  {
+    _id: "steel-fabrication-and-installation",
+    title: "Steel Fabrication & Installation",
+    description:
+      "Durable steel structures engineered with precision, perfect for industrial and infrastructure needs.",
+    icon: "asset:steel-icon.png",
+  },
+];
+
+const defaultClients = [
+  {
+    _id: "1",
+    title: "PT Krakatau Engineering",
+    image: "asset:krakatau-engineering.png",
+    link: "https://www.krakataueng.co.id/",
+  },
+  {
+    _id: "2",
+    title: "PT Krakatau Tirta Industri",
+    image: "asset:krakatau-tirta.png",
+    link: "https://www.krakatautirta.co.id/",
+  },
+  {
+    _id: "3",
+    title: "PT Krakatau Argo Logistics",
+    image: "asset:krakatau-logistik.png",
+    link: "https://krakatau-argologistics.com/",
+  },
+  {
+    _id: "4",
+    title: "PT PP",
+    image: "asset:pt-pp.png",
+    link: "https://www.ptpp.co.id/en",
+  },
+  {
+    _id: "5",
+    title: "DINDIKBUD Provinsi Banten",
+    image: "asset:dindikbud.png",
+    link: "https://dindikbud.bantenprov.go.id/",
+  },
+  {
+    _id: "6",
+    title: "PT Seven Gates Indonesia",
+    image: "asset:sevengates.png",
+    link: "https://www.sevengates.co.id/",
+  },
+  {
+    _id: "7",
+    title: "PT Jurong Engineering Lestari",
+    image: "asset:jurong-lestari.png",
+    link: "https://jel.com.sg/",
+  },
+  {
+    _id: "8",
+    title: "PT Kokoh Semesta",
+    image: "asset:kokoh-semesta.png",
+    link: "https://www.kokohsemesta.com/",
+  },
+];
+
+const defaultCertificates = [
+  { _id: "s1", title: "Certificate 1", image: "asset:sertif1.png" },
+  { _id: "s2", title: "Certificate 2", image: "asset:sertif2.png" },
+  { _id: "s3", title: "Certificate 3", image: "asset:sertif3.png" },
+  { _id: "s4", title: "Certificate 4", image: "asset:sertif4.png" },
+  { _id: "s5", title: "Certificate 5", image: "asset:sertif5.png" },
+  { _id: "s6", title: "Certificate 6", image: "asset:sertif6.jpg" },
+  { _id: "s7", title: "Certificate 7", image: "asset:sertif7.jpg" },
+];
+
 export default function LandingSection() {
   const home = useResource("/home");
   const services = useResource("/content/service?limit=3");
@@ -18,9 +111,11 @@ export default function LandingSection() {
     "/content/certificate?limit=12&page=" + certificatePage,
   );
   const trackRef = useRef(null);
+
   useEffect(() => {
     trackRef.current?.scrollTo(0, 0);
   }, [certificatePage]);
+
   const scrollCertificates = (direction) => {
     const track = trackRef.current;
     if (!track?.firstElementChild) return;
@@ -40,31 +135,37 @@ export default function LandingSection() {
         : "smooth",
     });
   };
-  const partners = clients.data || [];
+
+  const homeData = home.data || defaultHome;
+  const serviceList = services.data?.length ? services.data : defaultServices;
+  const partners = clients.data?.length ? clients.data : defaultClients;
+  const certificateList = certificates.data?.length
+    ? certificates.data
+    : defaultCertificates;
+
   return (
     <div className="landing-container">
-      <ContentState resource={home} />
-      {home.data && (
-        <div className="landing-overview-section">
-          <div className="landing-overview-section-text">
-            <h1>{home.data.title}</h1>
-            <div className="landing-overview-section-text-bridge">
-              <h4>{home.data.description}</h4>
-              <Link to="/contact">Contact Us</Link>
-            </div>
+      {home.loading && <ContentState resource={home} />}
+      <div className="landing-overview-section">
+        <div className="landing-overview-section-text">
+          <h1>{homeData.title}</h1>
+          <div className="landing-overview-section-text-bridge">
+            <h4>{homeData.description}</h4>
+            <Link to="/contact">Contact Us</Link>
           </div>
-          <img src={mediaUrl(home.data.image)} alt={home.data.title} />
         </div>
-      )}
+        <img src={mediaUrl(homeData.image)} alt={homeData.title} />
+      </div>
+
       <div className="landing-service-section">
         <h4>Services Tailored to You</h4>
         <h6>
           Reliable engineering and supply solutions, crafted with precision and
           built with purpose.
         </h6>
-        <ContentState resource={services} />
+        {services.loading && <ContentState resource={services} />}
         <div className="landing-service-section-card">
-          {services.data?.map((item) => (
+          {serviceList.map((item) => (
             <article
               className="landing-service-section-card-item"
               key={item._id}
@@ -85,6 +186,7 @@ export default function LandingSection() {
           </Link>
         </div>
       </div>
+
       <div className="landing-about-section">
         <div className="landing-about-section-top">
           <div className="landing-about-section-top-text">
@@ -113,10 +215,11 @@ export default function LandingSection() {
           </div>
         </div>
       </div>
+
       <div className="landing-client-section">
         <h1>Who We Work With</h1>
         <h6>Trusted partnerships across industries.</h6>
-        <ContentState resource={clients} />
+        {clients.loading && <ContentState resource={clients} />}
         {partners.length > 0 && (
           <div className="client-marquee">
             <div className="client-track">
@@ -143,6 +246,7 @@ export default function LandingSection() {
         )}
         <Link to="/client">View all clients →</Link>
       </div>
+
       <div className="landing-certificate-section">
         <div className="landing-certificate-section-top">
           <div className="landing-certificate-section-text">
@@ -151,7 +255,7 @@ export default function LandingSection() {
           </div>
           <div className="landing-certificate-section-button">
             <button
-              disabled={!certificates.data?.length}
+              disabled={!certificateList.length}
               onClick={() => scrollCertificates(-1)}
               aria-label="Previous certificate"
               aria-controls="certificate-track"
@@ -159,7 +263,7 @@ export default function LandingSection() {
               <img src={left} alt="" />
             </button>
             <button
-              disabled={!certificates.data?.length}
+              disabled={!certificateList.length}
               onClick={() => scrollCertificates(1)}
               aria-label="Next certificate"
               aria-controls="certificate-track"
@@ -168,7 +272,7 @@ export default function LandingSection() {
             </button>
           </div>
         </div>
-        <ContentState resource={certificates} />
+        {certificates.loading && <ContentState resource={certificates} />}
         <div className="certificate-card-carousel">
           <div
             className="certificate-carousel-track"
@@ -178,7 +282,7 @@ export default function LandingSection() {
             tabIndex={0}
             ref={trackRef}
           >
-            {certificates.data?.map((item) => (
+            {certificateList.map((item) => (
               <a
                 className="certificate-img-wrapper"
                 key={item._id}
@@ -197,11 +301,13 @@ export default function LandingSection() {
             ))}
           </div>
         </div>
-        <Pagination
-          meta={certificates.meta}
-          page={certificatePage}
-          onChange={setCertificatePage}
-        />
+        {certificates.meta && (
+          <Pagination
+            meta={certificates.meta}
+            page={certificatePage}
+            onChange={setCertificatePage}
+          />
+        )}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import pin from "../assets/pin-icon.png";
 import { useState } from "react";
 import { api, errorMessage } from "../lib/api";
 import "../style/Contact.style.css";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const [userFirstName, setFirstName] = useState("");
@@ -79,6 +80,15 @@ const Contact = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Contact Us | PT Hanindo Bakti Sejahtera</title>
+
+        <meta
+          name="description"
+          content="Get in touch with PT Hanindo Bakti Sejahtera for engineering, construction, and industrial service inquiries."
+        />
+      </Helmet>
+
       <Header />
       <div className="contact-container">
         <div className="contact-text">

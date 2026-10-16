@@ -4,13 +4,16 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import logo from "../assets/FA_HBS_Logo.png";
 import { api, session, errorMessage } from "../lib/api";
+import { Helmet } from "react-helmet-async";
 import "../style/Login.style.css";
+
 export default function Login() {
   const [visible, setVisible] = useState(false);
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
   async function submit(event) {
     event.preventDefault();
     setBusy(true);
@@ -32,8 +35,12 @@ export default function Login() {
       setBusy(false);
     }
   }
+
   return (
     <div>
+      <Helmet>
+        <title>Login Admin | PT Hanindo Bakti Sejahtera</title>
+      </Helmet>
       <Header />
       <main className="login-container">
         <form className="login-card" onSubmit={submit}>

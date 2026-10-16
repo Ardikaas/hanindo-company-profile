@@ -4,6 +4,7 @@
   z-index: 20;
   background: #fff;
   border-bottom: 1px solid #dfe0df;
+  min-height: unset !important;
 }
 .header-container {
   display: flex;

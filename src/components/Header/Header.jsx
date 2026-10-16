@@ -3,6 +3,7 @@ import menu from "../../assets/menu-icon.png";
 import close from "../../assets/x-icon.png";
 import "./Header.style.css";
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,23 +35,23 @@ const Header = () => {
   return (
     <>
       <div className="header-container">
-        <a href="/">
+        <Link to="/">
           <img src={logo} alt="logo-hanindo" />
-        </a>
+        </Link>
         <div className="header-link">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/client">Client</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/contact">Contact</a>
+          <Link to="/">Home</Link>
+          <Link to="/about">About</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/client">Client</Link>
+          <Link to="/portfolio">Portfolio</Link>
+          <Link to="/contact">Contact</Link>
         </div>
       </div>
       <div className="header-container-small">
         <div className="small-logo">
-          <a href="/">
+          <Link to="/">
             <img src={logo} alt="logo-hanindo" />
-          </a>
+          </Link>
           <button
             ref={toggleRef}
             onClick={handleClick}
@@ -68,12 +69,24 @@ const Header = () => {
           id="mobile-navigation"
           className={`header-link-small ${isOpen ? "open" : ""}`}
         >
-          <a href="/">Home</a>
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/client">Client</a>
-          <a href="/portfolio">Portfolio</a>
-          <a href="/contact">Contact</a>
+          <Link to="/" onClick={() => setIsOpen(false)}>
+            Home
+          </Link>
+          <Link to="/about" onClick={() => setIsOpen(false)}>
+            About
+          </Link>
+          <Link to="/services" onClick={() => setIsOpen(false)}>
+            Services
+          </Link>
+          <Link to="/client" onClick={() => setIsOpen(false)}>
+            Client
+          </Link>
+          <Link to="/portfolio" onClick={() => setIsOpen(false)}>
+            Portfolio
+          </Link>
+          <Link to="/contact" onClick={() => setIsOpen(false)}>
+            Contact
+          </Link>
         </div>
       </div>
     </>

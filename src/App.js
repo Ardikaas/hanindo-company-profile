@@ -17,7 +17,6 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/*" element={<Error />} />
         <Route path="/about" element={<About />} />
         <Route path="/client" element={<Clients />} />
         <Route path="/contact" element={<Contact />} />
@@ -33,6 +32,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route path="*" element={<Error />} />
       </Routes>
     </Router>
   );

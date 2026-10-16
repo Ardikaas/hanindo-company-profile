@@ -12,10 +12,20 @@ import wallpaper from "../assets/wallpaper.png";
 import wireLogo from "../assets/wire-logo-hanindo.png";
 import logoColor from "../assets/logo-color.png";
 import companyColor from "../assets/company-color.png";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const About = () => {
   return (
     <div>
+      <Helmet>
+        <title>About Us | PT Hanindo Bakti Sejahtera</title>
+
+        <meta
+          name="description"
+          content="Learn more about PT Hanindo Bakti Sejahtera, our vision, mission, and commitment to delivering high-quality engineering and industrial solutions."
+        />
+      </Helmet>
       <Header />
       <div className="about-container">
         <img className="about-bg-big" src={aboutBgBig} alt="about-bg-big" />
@@ -85,13 +95,13 @@ const About = () => {
               expertise, and driven by a passion to shape a better future for
               Indonesian industry.
             </h6>
-            <a
-              href="https://drive.google.com/file/d/1ngO9jx8NL9hWyiek0fVNH8aP6KJfIPIM/view?usp=drive_link"
+            <Link
+              to="https://drive.google.com/file/d/1ngO9jx8NL9hWyiek0fVNH8aP6KJfIPIM/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
             >
               <h4>Download Company Profile</h4>
-            </a>
+            </Link>
           </div>
         </div>
         <div className="about-vimision-section">
@@ -257,13 +267,13 @@ const About = () => {
               className="company-color"
             />
           </div>
-          <a
-            href="https://drive.google.com/drive/folders/1QNSeQzd1K4obzehIwQ45OmwINRn_rmpY"
+          <Link
+            to="https://drive.google.com/drive/folders/1QNSeQzd1K4obzehIwQ45OmwINRn_rmpY"
             target="_blank"
             rel="noopener noreferrer"
           >
             <h4>Get the Brand Logo</h4>
-          </a>
+          </Link>
         </div>
         <div className="about-team-section">
           <div className="about-team-section-top">
